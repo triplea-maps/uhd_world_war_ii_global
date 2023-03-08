@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="1.18"/>
+  <info name="UHD World War II Global" version="1.19"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6682,6 +6682,11 @@
 <b>Working Change Log Delete When Finished</b> <br><br>
 Change Log:<br>
 <br>
+1.19<br>
+3-8-23<br>
+Med Islands and Morocco Change.
+<br>
+<br>
 1.18 Ownership Flags Done As A Map Option.
 <br>
 <br>
@@ -6695,7 +6700,7 @@ Change Log:<br>
 <br>
 <br>1.12 Change Sierra Leone to British=<b>Done</b><br>
 <br>
-Fix Korea=TODO<br>
+Fix Korea=<b>DONE</b><br>
 <br>
 Fake China Capital=TODO<br>
 <br>
