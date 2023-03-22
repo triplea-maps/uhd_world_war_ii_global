@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="1.191"/>
+  <info name="UHD World War II Global" version="1.192"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4613,7 +4613,6 @@
       <option name="placement" value="Iraq:Flag" count="1"/>
       <option name="placement" value="Finland:Flag" count="1"/>
       <option name="placement" value="Liberia:Flag" count="1"/>
-      <option name="placement" value="Sierra Leone:Flag" count="1"/>
       <option name="placement" value="Portuguese Guinea:Flag" count="1"/>
       <option name="placement" value="Rio de Oro:Flag" count="1"/>
       <option name="placement" value="Uruguay:Flag" count="1"/>
@@ -6022,6 +6021,7 @@
       <unitPlacement unitType="destroyer" territory="39 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="39 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="39 Sea Zone" quantity="1" owner="British"/>
+      <unitPlacement unitType="Flag" territory="Sierra Leone" quantity="1" owner="British"/>
       <!-- French -->
       <unitPlacement unitType="infantry" territory="France" quantity="6" owner="French"/>
       <unitPlacement unitType="artillery" territory="France" quantity="1" owner="French"/>
@@ -6681,6 +6681,11 @@
 
 <b>Working Change Log Delete When Finished</b> <br><br>
 Change Log:<br>
+<br>
+1.192<br>
+3-14-23<br>
+Sierra Leone Done.
+<br>
 <br>
 1.191<br>
 3-12-23<br>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="1.192"/>
+  <info name="UHD World War II Global" version="1.193"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4398,6 +4398,7 @@
       <option name="placement" value="South West Africa:Flag" count="1"/>
       <option name="placement" value="Nigeria:Flag" count="1"/>
       <option name="placement" value="Alberta Saskatchewan Manitoba:Flag" count="1"/>
+      <option name="placement" value="Sierra Leone:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <!-- ANZAC Triggers -->
@@ -4588,7 +4589,6 @@
     <!-- Neutral Triggers -->
     <attachment name="triggerAttachment_Neutral_Flags_Activate" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Flag"/>
-      <option name="placement" value="Eire:Flag" count="1"/>
       <option name="placement" value="Portugal:Flag" count="1"/>
       <option name="placement" value="Chile:Flag" count="1"/>
       <option name="placement" value="Afghanistan:Flag" count="1"/>
@@ -4601,17 +4601,6 @@
       <option name="placement" value="Venezuela:Flag" count="1"/>
       <option name="placement" value="Sweden:Flag" count="1"/>
       <option name="placement" value="Spain:Flag" count="1"/>
-      <option name="placement" value="Ulaanbaatar:Flag" count="1"/>
-      <option name="placement" value="Buyant-Uhaa:Flag" count="1"/>
-      <option name="placement" value="Olgiy:Flag" count="1"/>
-      <option name="placement" value="Dzavhan:Flag" count="1"/>
-      <option name="placement" value="Brazil:Flag" count="1"/>
-      <option name="placement" value="Persia:Flag" count="1"/>
-      <option name="placement" value="Yugoslavia:Flag" count="1"/>
-      <option name="placement" value="Greece:Flag" count="1"/>
-      <option name="placement" value="Bulgaria:Flag" count="1"/>
-      <option name="placement" value="Iraq:Flag" count="1"/>
-      <option name="placement" value="Finland:Flag" count="1"/>
       <option name="placement" value="Liberia:Flag" count="1"/>
       <option name="placement" value="Portuguese Guinea:Flag" count="1"/>
       <option name="placement" value="Rio de Oro:Flag" count="1"/>
@@ -4619,15 +4608,46 @@
       <option name="placement" value="Bolivia:Flag" count="1"/>
       <option name="placement" value="Ecuador:Flag" count="1"/>
       <option name="placement" value="Colombia:Flag" count="1"/>
-      <option name="placement" value="Eastern Persia:Flag" count="1"/>
-      <option name="placement" value="Northwest Persia:Flag" count="1"/>
-      <option name="placement" value="Crete:Flag" count="1"/>
-      <option name="placement" value="Tsagaan Olom:Flag" count="1"/>
-      <option name="placement" value="Central Mongolia:Flag" count="1"/>
       <option name="placement" value="Paraguay:Flag" count="1"/>
       <option name="placement" value="Peru:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+
+    <!-- Mongols Triggers -->
+    <attachment name="triggerAttachment_MongolsFlags_Activate" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag"/>
+      <option name="placement" value="Ulaanbaatar:Flag" count="1"/>
+      <option name="placement" value="Tsagaan Olom:Flag" count="1"/>
+      <option name="placement" value="Central Mongolia:Flag" count="1"/>
+      <option name="placement" value="Dzavhan:Flag" count="1"/>
+      <option name="placement" value="Buyant-Uhaa:Flag" count="1"/>
+      <option name="placement" value="Olgiy:Flag" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+
+    <!-- Neutral Allies Triggers -->
+    <attachment name="triggerAttachment_Neutral_AlliesFlags_Activate" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag"/>
+      <option name="placement" value="Brazil:Flag" count="1"/>
+      <option name="placement" value="Crete:Flag" count="1"/>
+      <option name="placement" value="Eire:Flag" count="1"/>
+      <option name="placement" value="Greece:Flag" count="1"/>
+      <option name="placement" value="Northwest Persia:Flag" count="1"/>
+      <option name="placement" value="Persia:Flag" count="1"/>
+      <option name="placement" value="Eastern Persia:Flag" count="1"/>
+      <option name="placement" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+
+    <!-- Neutral Axis Triggers -->
+    <attachment name="triggerAttachment_Neutral_AxisFlags_Activate" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag"/>
+      <option name="placement" value="Bulgaria:Flag" count="1"/>
+      <option name="placement" value="Finland:Flag" count="1"/>
+      <option name="placement" value="Iraq:Flag" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    
     <!-- French Triggers -->
     <attachment name="triggerAttachment_Germans_Conquer_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachment_French_1_Lose_France"/>
@@ -6021,7 +6041,6 @@
       <unitPlacement unitType="destroyer" territory="39 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="39 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="39 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="Flag" territory="Sierra Leone" quantity="1" owner="British"/>
       <!-- French -->
       <unitPlacement unitType="infantry" territory="France" quantity="6" owner="French"/>
       <unitPlacement unitType="artillery" territory="France" quantity="1" owner="French"/>
