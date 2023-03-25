@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="1.194"/>
+  <info name="UHD World War II Global" version="1.195"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4369,7 +4369,6 @@
       <option name="placement" value="United Kingdom:Flag" count="1"/>
       <option name="placement" value="Gibraltar:Flag" count="1"/>
       <option name="placement" value="Malta:Flag" count="1"/>
-      <option name="placement" value="Alexandria:Flag" count="1"/>
       <option name="placement" value="Anglo Egyptian Sudan:Flag" count="1"/>
       <option name="placement" value="Union of South Africa:Flag" count="1"/>
       <option name="placement" value="West India:Flag" count="1"/>
@@ -6722,6 +6721,10 @@ This is a Larger Map for the Above Game. All Rules are the Same.<br><br>
 
 <b>Working Change Log Delete When Finished</b> <br><br>
 Change Log:<br>
+<br>
+1.195<br>
+3-24-23<br>
+Fix Alexandria Dual Flag Placement.<br>
 <br>
 1.194<br>
 3-23-23<br>
