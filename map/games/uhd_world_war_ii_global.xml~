@@ -5066,6 +5066,25 @@
       <option name="when" value="before:americansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
+
+    <!-- NOTIFICATIONS -->
+    <attachment name="conditionAttachmentTurn1Check" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="Germany" count="1"/>
+      <option name="rounds" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment1note" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="notification" value="R01"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansTechActivation"/>
+    </attachment>
+    <attachment name="triggerAttachment1noteB" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="notification" value="R01B"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+
     <!-- Player Attachments -->
     <attachment name="playerAttachment" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="captureUnitOnEnteringBy" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
@@ -6706,7 +6725,9 @@ Change Log:<br>
 <br>
 1.194<br>
 3-23-23<br>
-Placements Done. Objectives Done. Notes Done.
+Placements Done. Objectives Done. Notes Done. Notifications Done.<br>
+<br>
+Fuck Yea LOL !!!
 <br>
 <br>
 1.192<br>
