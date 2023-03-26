@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="1.195"/>
+  <info name="UHD World War II Global" version="2.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -3873,7 +3873,6 @@
       <option name="conditions" value="conditionAttachment_Germans_5_Allies_Do_Not_Control_Sweden:conditionAttachment_Germans_5_Sweden_Axis_Or_ProAxis_Or_Strict"/>
       <option name="conditionType" value="AND"/>
     </attachment>
-   
     <!-- Russians Conditions -->
     <attachment name="conditionAttachment_Russians_1_Convoy_Clear" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="enemyExclusionTerritories" value="125 Sea Zone" count="1"/>
@@ -4200,6 +4199,22 @@
       <option name="placement" value="Denmark:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    
+    <attachment name="conditionAttachment_GermansRemoveProAxisFlagFinland" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Finland" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansRemoveProAxisFlagFinland" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_GermansRemoveProAxisFlagFinland"/>
+      <option name="removeUnits" value="Finland:Flag" count="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansPlaceFlagFinland" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_GermansRemoveProAxisFlagFinland"/>
+      <option name="placement" value="Finland:Flag" count="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachment_Russians_1_Lend_Lease"/>
@@ -6719,54 +6734,13 @@
 <b>UHD World War II Global</b><br><br>
 This is a Larger Map for the Above Game. All Rules are the Same.<br><br>
 
-<b>Working Change Log Delete When Finished</b> <br><br>
+
 Change Log:<br>
 <br>
-1.195<br>
-3-24-23<br>
-Fix Alexandria Dual Flag Placement.<br>
+2.0<br>
+3-25-23<br>
+All Done. Testing.<br>
 <br>
-1.194<br>
-3-23-23<br>
-Placements Done. Objectives Done. Notes Done. Notifications Done.<br>
-<br>
-Fuck Yea LOL !!!
-<br>
-<br>
-1.192<br>
-3-14-23<br>
-Sierra Leone Done.
-<br>
-<br>
-1.191<br>
-3-12-23<br>
-Placement Update.Russia Done.
-<br>
-<br>
-1.19<br>
-3-8-23<br>
-Med Islands and Morocco Change.
-<br>
-<br>
-1.18 Ownership Flags Done As A Map Option.
-<br>
-<br>
-1.15 Pacific Map Done. New British and ANZAC Artillery. All Units Deshadowed.
-<br>
-<br>
-1.14 Resize Units Done. New Japan Artillery.
-<br>
-<br>
-1.13 Pacific Map Ocean Done. 
-<br>
-<br>1.12 Change Sierra Leone to British=<b>Done</b><br>
-<br>
-Fix Korea=<b>DONE</b><br>
-<br>
-Fake China Capital=TODO<br>
-<br>
-Make Sure Units Work for V3=TODO<br>
-<br>    
 <br>
 <b>Note</b><br>
 This game uses the latest Global 1940 2nd Edition (successor to Alpha +3) rules, as posted on Larry's website.<br>
