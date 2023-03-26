@@ -4214,6 +4214,34 @@
       <option name="placement" value="Finland:Flag" count="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
+    <attachment name="conditionAttachment_GermansRemoveProAxisFlagBulgaria" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Bulgaria" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansRemoveProAxisFlagBulgaria" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_GermansRemoveProAxisFlagBulgaria"/>
+      <option name="removeUnits" value="Bulgaria:Flag" count="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansPlaceFlagBulgaria" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_GermansRemoveProAxisFlagBulgaria"/>
+      <option name="placement" value="Bulgaria:Flag" count="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_GermansRemoveProAxisFlagIraq" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Iraq" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansRemoveProAxisFlagIraq" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_GermansRemoveProAxisFlagIraq"/>
+      <option name="removeUnits" value="Iraq:Flag" count="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansPlaceFlagIraq" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_GermansRemoveProAxisFlagIraq"/>
+      <option name="placement" value="Iraq:Flag" count="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
     
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -4257,6 +4285,105 @@
       <option name="placement" value="Samara:Flag" count="1"/>
       <option name="placement" value="Turkmenistan:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
+    </attachment>
+
+    <attachment name="conditionAttachment_RussiansRemoveProAxisFlagPersia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansRemoveProAxisFlagPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagPersia"/>
+      <option name="removeUnits" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansPlaceFlagPersia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagPersia"/>
+      <option name="placement" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveProAxisFlagNorthwestPersia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Northwest Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansRemoveProAxisFlagNorthwestPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagNorthwestPersia"/>
+      <option name="removeUnits" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansPlaceFlagNorthwestPersia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagNorthwestPersia"/>
+      <option name="placement" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveProAxisFlagEasternPersia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Eastern Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansRemoveProAxisFlagEasternPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagEasternPersia"/>
+      <option name="removeUnits" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansPlaceFlagEasternPersia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagEasternPersia"/>
+      <option name="placement" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveProAxisFlagCrete" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Crete" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansRemoveProAxisFlagCrete" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagCrete"/>
+      <option name="removeUnits" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansPlaceFlagCrete" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagCrete"/>
+      <option name="placement" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveProAxisFlagGreece" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Greece" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansRemoveProAxisFlagGreece" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagGreece"/>
+      <option name="removeUnits" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansPlaceFlagGreece" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagGreece"/>
+      <option name="placement" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveProAxisFlagYugoslavia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Yugoslavia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansRemoveProAxisFlagYugoslavia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagYugoslavia"/>
+      <option name="removeUnits" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansPlaceFlagYugoslavia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagYugoslavia"/>
+      <option name="placement" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveProAxisFlagBrazil" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Brazil" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansRemoveProAxisFlagBrazil" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagBrazil"/>
+      <option name="removeUnits" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansPlaceFlagBrazil" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_RussiansRemoveProAxisFlagBrazil"/>
+      <option name="placement" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
     </attachment>
     <!-- Japanese Triggers -->
     <!-- OLD Kamikaze trigger:
@@ -4371,6 +4498,49 @@
       <option name="placement" value="Marshall Islands:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+
+    <attachment name="conditionAttachment_JapaneseRemoveProAxisFlagFinland" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Finland" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapaneseRemoveProAxisFlagFinland" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_JapaneseRemoveProAxisFlagFinland"/>
+      <option name="removeUnits" value="Finland:Flag" count="1"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapanesePlaceFlagFinland" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_JapaneseRemoveProAxisFlagFinland"/>
+      <option name="placement" value="Finland:Flag" count="1"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_JapaneseRemoveProAxisFlagBulgaria" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Bulgaria" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapaneseRemoveProAxisFlagBulgaria" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_JapaneseRemoveProAxisFlagBulgaria"/>
+      <option name="removeUnits" value="Bulgaria:Flag" count="1"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapanesePlaceFlagBulgaria" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_JapaneseRemoveProAxisFlagBulgaria"/>
+      <option name="placement" value="Bulgaria:Flag" count="1"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_JapaneseRemoveProAxisFlagIraq" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Iraq" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapaneseRemoveProAxisFlagIraq" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_JapaneseRemoveProAxisFlagIraq"/>
+      <option name="removeUnits" value="Iraq:Flag" count="1"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapanesePlaceFlagIraq" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_JapaneseRemoveProAxisFlagIraq"/>
+      <option name="placement" value="Iraq:Flag" count="1"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+    </attachment>
     
     <!-- British Triggers -->
     <attachment name="triggerAttachment_British_Flags_Activate" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -4415,6 +4585,104 @@
       <option name="placement" value="Sierra Leone:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="conditionAttachment_BritishRemoveProAxisFlagPersia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishRemoveProAxisFlagPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagPersia"/>
+      <option name="removeUnits" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishPlaceFlagPersia" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagPersia"/>
+      <option name="placement" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_BritishRemoveProAxisFlagNorthwestPersia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Northwest Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishRemoveProAxisFlagNorthwestPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagNorthwestPersia"/>
+      <option name="removeUnits" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishPlaceFlagNorthwestPersia" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagNorthwestPersia"/>
+      <option name="placement" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_BritishRemoveProAxisFlagEasternPersia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Eastern Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishRemoveProAxisFlagEasternPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagEasternPersia"/>
+      <option name="removeUnits" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishPlaceFlagEasternPersia" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagEasternPersia"/>
+      <option name="placement" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_BritishRemoveProAxisFlagCrete" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Crete" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishRemoveProAxisFlagCrete" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagCrete"/>
+      <option name="removeUnits" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishPlaceFlagCrete" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagCrete"/>
+      <option name="placement" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_BritishRemoveProAxisFlagGreece" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Greece" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishRemoveProAxisFlagGreece" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagGreece"/>
+      <option name="removeUnits" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishPlaceFlagGreece" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagGreece"/>
+      <option name="placement" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_BritishRemoveProAxisFlagYugoslavia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Yugoslavia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishRemoveProAxisFlagYugoslavia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagYugoslavia"/>
+      <option name="removeUnits" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishPlaceFlagYugoslavia" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagYugoslavia"/>
+      <option name="placement" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_BritishRemoveProAxisFlagBrazil" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Brazil" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishRemoveProAxisFlagBrazil" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagBrazil"/>
+      <option name="removeUnits" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishPlaceFlagBrazil" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_BritishRemoveProAxisFlagBrazil"/>
+      <option name="placement" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
     <!-- ANZAC Triggers -->
     <attachment name="triggerAttachment_ANZAC_1_Control_Original_And_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachment_ANZAC_1_Original:conditionAttachment_ANZAC_1_Malaya"/>
@@ -4434,6 +4702,104 @@
       <option name="placement" value="Solomon Islands:Flag" count="1"/>
       <option name="placement" value="New Guinea:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZACRemoveProAxisFlagPersia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACRemoveProAxisFlagPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagPersia"/>
+      <option name="removeUnits" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACPlaceFlagPersia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagPersia"/>
+      <option name="placement" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZACRemoveProAxisFlagNorthwestPersia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Northwest Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACRemoveProAxisFlagNorthwestPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagNorthwestPersia"/>
+      <option name="removeUnits" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACPlaceFlagNorthwestPersia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagNorthwestPersia"/>
+      <option name="placement" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZACRemoveProAxisFlagEasternPersia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Eastern Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACRemoveProAxisFlagEasternPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagEasternPersia"/>
+      <option name="removeUnits" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACPlaceFlagEasternPersia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagEasternPersia"/>
+      <option name="placement" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZACRemoveProAxisFlagCrete" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Crete" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACRemoveProAxisFlagCrete" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagCrete"/>
+      <option name="removeUnits" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACPlaceFlagCrete" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagCrete"/>
+      <option name="placement" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZACRemoveProAxisFlagGreece" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Greece" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACRemoveProAxisFlagGreece" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagGreece"/>
+      <option name="removeUnits" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACPlaceFlagGreece" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagGreece"/>
+      <option name="placement" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZACRemoveProAxisFlagYugoslavia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Yugoslavia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACRemoveProAxisFlagYugoslavia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagYugoslavia"/>
+      <option name="removeUnits" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACPlaceFlagYugoslavia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagYugoslavia"/>
+      <option name="placement" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZACRemoveProAxisFlagBrazil" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Brazil" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACRemoveProAxisFlagBrazil" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagBrazil"/>
+      <option name="removeUnits" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACPlaceFlagBrazil" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ANZACRemoveProAxisFlagBrazil"/>
+      <option name="placement" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:anzacNonCombatMove"/>
     </attachment>
     <!-- Chinese Triggers -->
     <attachment name="triggerAttachment_Chinese_Artillery_Supplies" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -4584,6 +4950,104 @@
       <option name="placement" value="Johnston Island:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveProAxisFlagPersia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansRemoveProAxisFlagPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagPersia"/>
+      <option name="removeUnits" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansPlaceFlagPersia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagPersia"/>
+      <option name="placement" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveProAxisFlagNorthwestPersia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Northwest Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansRemoveProAxisFlagNorthwestPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagNorthwestPersia"/>
+      <option name="removeUnits" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansPlaceFlagNorthwestPersia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagNorthwestPersia"/>
+      <option name="placement" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveProAxisFlagEasternPersia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Eastern Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansRemoveProAxisFlagEasternPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagEasternPersia"/>
+      <option name="removeUnits" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansPlaceFlagEasternPersia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagEasternPersia"/>
+      <option name="placement" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveProAxisFlagCrete" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Crete" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansRemoveProAxisFlagCrete" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagCrete"/>
+      <option name="removeUnits" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansPlaceFlagCrete" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagCrete"/>
+      <option name="placement" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveProAxisFlagGreece" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Greece" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansRemoveProAxisFlagGreece" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagGreece"/>
+      <option name="removeUnits" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansPlaceFlagGreece" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagGreece"/>
+      <option name="placement" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveProAxisFlagYugoslavia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Yugoslavia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansRemoveProAxisFlagYugoslavia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagYugoslavia"/>
+      <option name="removeUnits" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansPlaceFlagYugoslavia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagYugoslavia"/>
+      <option name="placement" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveProAxisFlagBrazil" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Brazil" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansRemoveProAxisFlagBrazil" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagBrazil"/>
+      <option name="removeUnits" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansPlaceFlagBrazil" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_AmericansRemoveProAxisFlagBrazil"/>
+      <option name="placement" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
     
     <!-- Italian Triggers -->
     <attachment name="triggerAttachment_French_Flags_Activate" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -4598,6 +5062,49 @@
       <option name="placement" value="Sardinia:Flag" count="1"/>
       <option name="placement" value="Southern Italy:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    
+    <attachment name="conditionAttachment_ItaliansRemoveProAxisFlagFinland" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Finland" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ItaliansRemoveProAxisFlagFinland" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ItaliansRemoveProAxisFlagFinland"/>
+      <option name="removeUnits" value="Finland:Flag" count="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ItaliansPlaceFlagFinland" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ItaliansRemoveProAxisFlagFinland"/>
+      <option name="placement" value="Finland:Flag" count="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansRemoveProAxisFlagBulgaria" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Bulgaria" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ItaliansRemoveProAxisFlagBulgaria" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ItaliansRemoveProAxisFlagBulgaria"/>
+      <option name="removeUnits" value="Bulgaria:Flag" count="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ItaliansPlaceFlagBulgaria" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ItaliansRemoveProAxisFlagBulgaria"/>
+      <option name="placement" value="Bulgaria:Flag" count="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansRemoveProAxisFlagIraq" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Iraq" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ItaliansRemoveProAxisFlagIraq" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ItaliansRemoveProAxisFlagIraq"/>
+      <option name="removeUnits" value="Iraq:Flag" count="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ItaliansPlaceFlagIraq" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_ItaliansRemoveProAxisFlagIraq"/>
+      <option name="placement" value="Iraq:Flag" count="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
     </attachment>
 
     <!-- Neutral Triggers -->
@@ -4754,6 +5261,104 @@
       <option name="placement" value="French Central Africa:Flag" count="1"/>
       <option name="placement" value="French Equatorial Africa:Flag" count="1"/>
       <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="conditionAttachment_FrenchRemoveProAxisFlagPersia" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchRemoveProAxisFlagPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagPersia"/>
+      <option name="removeUnits" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchPlaceFlagPersia" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagPersia"/>
+      <option name="placement" value="Persia:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_FrenchRemoveProAxisFlagNorthwestPersia" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Northwest Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchRemoveProAxisFlagNorthwestPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagNorthwestPersia"/>
+      <option name="removeUnits" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchPlaceFlagNorthwestPersia" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagNorthwestPersia"/>
+      <option name="placement" value="Northwest Persia:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_FrenchRemoveProAxisFlagEasternPersia" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Eastern Persia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchRemoveProAxisFlagEasternPersia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagEasternPersia"/>
+      <option name="removeUnits" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchPlaceFlagEasternPersia" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagEasternPersia"/>
+      <option name="placement" value="Eastern Persia:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_FrenchRemoveProAxisFlagCrete" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Crete" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchRemoveProAxisFlagCrete" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagCrete"/>
+      <option name="removeUnits" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchPlaceFlagCrete" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagCrete"/>
+      <option name="placement" value="Crete:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_FrenchRemoveProAxisFlagGreece" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Greece" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchRemoveProAxisFlagGreece" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagGreece"/>
+      <option name="removeUnits" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchPlaceFlagGreece" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagGreece"/>
+      <option name="placement" value="Greece:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_FrenchRemoveProAxisFlagYugoslavia" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Yugoslavia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchRemoveProAxisFlagYugoslavia" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagYugoslavia"/>
+      <option name="removeUnits" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchPlaceFlagYugoslavia" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagYugoslavia"/>
+      <option name="placement" value="Yugoslavia:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="conditionAttachment_FrenchRemoveProAxisFlagBrazil" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Brazil" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchRemoveProAxisFlagBrazil" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagBrazil"/>
+      <option name="removeUnits" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchPlaceFlagBrazil" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Flag:conditionAttachment_FrenchRemoveProAxisFlagBrazil"/>
+      <option name="placement" value="Brazil:Flag" count="1"/>
+      <option name="when" value="after:frenchNonCombatMove"/>
     </attachment>
 
     <!-- Dutch Triggers -->
@@ -6736,6 +7341,11 @@ This is a Larger Map for the Above Game. All Rules are the Same.<br><br>
 
 
 Change Log:<br>
+<br>
+2.1<br>
+3-25-23<br>
+Fix Pro Neutral Flags Not Changing.
+<br>
 <br>
 2.0<br>
 3-25-23<br>
