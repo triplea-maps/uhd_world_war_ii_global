@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.11"/>
+  <info name="UHD World War II Global" version="2.12"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7352,6 +7352,11 @@ Open "v3 Units" and replace the "units" folder with it.
 <br>
 <br>
 Change Log:<br>
+<br>
+2.12<br>
+3-26-23<br>
+Notification Added. German Place Adjusted.
+<br>
 <br>
 2.11<br>
 3-26-23<br>
