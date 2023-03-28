@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.12"/>
+  <info name="UHD World War II Global" version="2.13"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4197,6 +4197,7 @@
       <option name="placement" value="Romania:Flag" count="1"/>
       <option name="placement" value="Norway:Flag" count="1"/>
       <option name="placement" value="Denmark:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     
@@ -4284,6 +4285,7 @@
       <option name="placement" value="Rostov:Flag" count="1"/>
       <option name="placement" value="Samara:Flag" count="1"/>
       <option name="placement" value="Turkmenistan:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
 
@@ -4496,6 +4498,7 @@
       <option name="placement" value="Hainan:Flag" count="1"/>
       <option name="placement" value="Marianas:Flag" count="1"/>
       <option name="placement" value="Marshall Islands:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
 
@@ -4583,6 +4586,7 @@
       <option name="placement" value="Nigeria:Flag" count="1"/>
       <option name="placement" value="Alberta Saskatchewan Manitoba:Flag" count="1"/>
       <option name="placement" value="Sierra Leone:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="conditionAttachment_BritishRemoveProAxisFlagPersia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -4701,6 +4705,7 @@
       <option name="placement" value="Western Australia:Flag" count="1"/>
       <option name="placement" value="Solomon Islands:Flag" count="1"/>
       <option name="placement" value="New Guinea:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="conditionAttachment_ANZACRemoveProAxisFlagPersia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -4900,6 +4905,7 @@
       <option name="placement" value="Chahar:Flag" count="1"/>
       <option name="placement" value="Sikang:Flag" count="1"/>
       <option name="placement" value="Anhwe:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <!-- Americans Triggers -->
@@ -4948,6 +4954,7 @@
       <option name="placement" value="Aleutian Islands:Flag" count="1"/>
       <option name="placement" value="Alaska:Flag" count="1"/>
       <option name="placement" value="Johnston Island:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="conditionAttachment_AmericansRemoveProAxisFlagPersia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5061,6 +5068,7 @@
       <option name="placement" value="Ethiopia:Flag" count="1"/>
       <option name="placement" value="Sardinia:Flag" count="1"/>
       <option name="placement" value="Southern Italy:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     
@@ -5131,6 +5139,7 @@
       <option name="placement" value="Colombia:Flag" count="1"/>
       <option name="placement" value="Paraguay:Flag" count="1"/>
       <option name="placement" value="Peru:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
 
@@ -5143,6 +5152,7 @@
       <option name="placement" value="Dzavhan:Flag" count="1"/>
       <option name="placement" value="Buyant-Uhaa:Flag" count="1"/>
       <option name="placement" value="Olgiy:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
 
@@ -5157,6 +5167,7 @@
       <option name="placement" value="Persia:Flag" count="1"/>
       <option name="placement" value="Eastern Persia:Flag" count="1"/>
       <option name="placement" value="Yugoslavia:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
 
@@ -5166,6 +5177,7 @@
       <option name="placement" value="Bulgaria:Flag" count="1"/>
       <option name="placement" value="Finland:Flag" count="1"/>
       <option name="placement" value="Iraq:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     
@@ -5260,6 +5272,7 @@
       <option name="placement" value="French Guiana:Flag" count="1"/>
       <option name="placement" value="French Central Africa:Flag" count="1"/>
       <option name="placement" value="French Equatorial Africa:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="conditionAttachment_FrenchRemoveProAxisFlagPersia" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5369,6 +5382,7 @@
       <option name="placement" value="Dutch New Guinea:Flag" count="1"/>
       <option name="placement" value="Sumatra:Flag" count="1"/>
       <option name="placement" value="Suriname:Flag" count="1"/>
+      <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     
@@ -7352,6 +7366,11 @@ Open "v3 Units" and replace the "units" folder with it.
 <br>
 <br>
 Change Log:<br>
+<br>
+2.13<br>
+3-28-23<br>
+Fix Flags Placing Every Round.
+<br>
 <br>
 2.12<br>
 3-26-23<br>
