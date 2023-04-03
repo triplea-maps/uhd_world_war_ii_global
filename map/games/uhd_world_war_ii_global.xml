@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.14"/>
+  <info name="UHD World War II Global" version="2.15"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7365,7 +7365,15 @@ Open Folder<br>
 Open "v3 Units" and replace the "units" folder with it.
 <br>
 <br>
+You can turn off "Ownership Flags" in Map Options.
+<br>
+<br>
 Change Log:<br>
+<br>
+2.15<br>
+4-3-23<br>
+Final Adjustments. Upload to Triplea.
+<br>
 <br>
 2.14<br>
 3-31-23<br>
