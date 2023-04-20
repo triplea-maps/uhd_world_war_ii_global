@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.16"/>
+  <info name="UHD World War II Global" version="2.17"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7369,6 +7369,11 @@ You can turn off "Ownership Flags" in Map Options.
 <br>
 <br>
 Change Log:<br>
+<br>
+2.17<br>
+4-17-23<br>
+Finishing Touches for 41 and 43 Sea Zones Fix for Appearance.
+<br>
 <br>
 2.16<br>
 4-17-23<br>
