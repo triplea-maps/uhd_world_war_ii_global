@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.3"/>
+  <info name="UHD World War II Global" version="2.4"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7034,7 +7034,7 @@
     <property name="Tech Development" value="false" editable="true">
       <boolean/>
     </property>
-    <property name="Ownership Flags" value="true" editable="true">
+    <property name="Ownership Flags" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Remove All Tech Tokens At End Of Turn" value="true" editable="true">
@@ -7365,10 +7365,15 @@ Open Folder<br>
 Open "v3 Units" and replace the "units" folder with it.
 <br>
 <br>
-You can turn off "Ownership Flags" in Map Options.
+You can turn on "Ownership Flags" in Map Options.
 <br>
 <br>
 Change Log:<br>
+<br>
+2.4<br>
+6-20-23<br>
+Fixes Scotland Sea Zone 109 Connection. Turn "Ownership Flags" Off.
+<br>
 <br>
 2.3<br>
 6-14-23<br>
