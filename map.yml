@@ -1,3 +1,3 @@
-map_name: uhd_global_40
+map_name: uhd_world_war_ii_global
 games:
-- {game_name: UHD Global 40, file_name: uhd_global_40.xml}
+- {game_name: UHD World War II Global, file_name: uhd_world_war_ii_global.xml}
