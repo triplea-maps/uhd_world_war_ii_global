@@ -1,127 +1,3 @@
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.01;Germans=objectiveAttachment_Germans_1_Trade_with_Russia;objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia;objectiveAttachment_Germans_3_Control_Caucasus;triggerAttachment_Germans_4_Presence_In_Egypt;triggerAttachment_Germans_5_Swedish_Iron_Ore;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.02;Russians=triggerAttachment_Russians_1_Lend_Lease;objectiveAttachment_Russians_2_Spread_Of_Communism;objectiveAttachment_Russians_3_Berlin
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.03;Japanese=objectiveAttachment_Japanese_1_Trade_With_America;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.04;Americans=objectiveAttachment_Americans_1_Homeland;objectiveAttachment_Americans_2_Outer_Territories;objectiveAttachment_Americans_3_Defense_Obligations;objectiveAttachment_Americans_4_Philippines;triggerAttachment_Americans_5_Presence_In_France
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.05;Chinese=objectiveAttachment_Chinese_1_Burma_Road
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.06;British=objectiveAttachment_British_1_Original;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.07;Italians=objectiveAttachment_Italians_1_Control_The_Mediterranean;objectiveAttachment_Italians_2_Roman_Empire;objectiveAttachment_Italians_3_North_Africa;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.08;ANZAC=triggerAttachment_ANZAC_1_Control_Original_And_Malaya;objectiveAttachment_ANZAC_2_Control_Strategic_Islands
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.09;French=conditionAttachment_French_1_Liberation_Switch
-World_War_II_Global_1940_Alpha_3.TABLEGROUP.10;Victory_Conditions=triggerAttachmentAxisVictory1;triggerAttachmentAlliedVictory1
-
-
-World_War_II_Global_1940_Alpha_3.Germans;objectiveAttachment_Germans_1_Trade_with_Russia=<b>5 PUs</b> if not yet at war with Russia.
-World_War_II_Global_1940_Alpha_3.Germans;objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia=<b>5 PUs</b> for each German controlled territory: Volgograd or Novgorod or Russia.
-World_War_II_Global_1940_Alpha_3.Germans;objectiveAttachment_Germans_3_Control_Caucasus=<b>5 PUs</b> if Axis controls the Caucasus.
-World_War_II_Global_1940_Alpha_3.Germans;triggerAttachment_Germans_4_Presence_In_Egypt=<b>5 PUs</b> if there is at least one German land unit in Egypt, whether or not it is controlled by Italy or Germany or Japan.
-World_War_II_Global_1940_Alpha_3.Germans;triggerAttachment_Germans_5_Swedish_Iron_Ore=<b>5 PUs</b> if Germany controls both Denmark and Norway and Sweden is not allied-controlled or pro-allied.
-World_War_II_Global_1940_Alpha_3.Germans;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for each German controlled territory: Iraq or Persia or Northwest Persia.
-
-
-World_War_II_Global_1940_Alpha_3.Russians;triggerAttachment_Russians_1_Lend_Lease=<b>5 PUs</b> if Russia is at war, sz125 has no Axis warships (all sea units except transports), Archangel is Russia-controlled, and there are no allied units in any originally Russian territories.
-World_War_II_Global_1940_Alpha_3.Russians;objectiveAttachment_Russians_2_Spread_Of_Communism=<b>3 PUs</b> for each originally German, Italian, or Pro-Axis neutral territory that Russia controls.
-World_War_II_Global_1940_Alpha_3.Russians;objectiveAttachment_Russians_3_Berlin=<b>10 PUs</b> one time only, the first time Russia conquers Germany (Berlin).
-
-
-World_War_II_Global_1940_Alpha_3.Japanese;objectiveAttachment_Japanese_1_Trade_With_America=<b>10 PUs</b> if not yet at war with USA, has not yet attacked French Indo-China, and has not declared war on UK or ANZAC.
-World_War_II_Global_1940_Alpha_3.Japanese;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter=<b>5 PUs</b> if Axis controls all of Guam, Midway, Wake Island, Gilbert Islands, and Solomon Islands.
-World_War_II_Global_1940_Alpha_3.Japanese;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States=<b>5 PUs</b> for each Axis controlled territory: Hawaii, India, New South Wales, and Western United States.
-World_War_II_Global_1940_Alpha_3.Japanese;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies=<b>5 PUs</b> if Axis controls all of Sumatra, Java, Borneo, and Celebes.
-
-
-World_War_II_Global_1940_Alpha_3.Americans;objectiveAttachment_Americans_1_Homeland=<b>10 PUs</b> if USA is at war and EUS, WUS, and CUS are American-controlled.
-World_War_II_Global_1940_Alpha_3.Americans;objectiveAttachment_Americans_2_Outer_Territories=<b>5 PUs</b> if USA is at war and Alaska, Aleutian Islands, Hawaiian Islands, and Johnston Island, and Line Islands are American-controlled.
-World_War_II_Global_1940_Alpha_3.Americans;objectiveAttachment_Americans_3_Defense_Obligations=<b>5 PUs</b> if USA is at war and Mexico, South Eastern Mexico, Central America, and West Indies are American-controlled.
-World_War_II_Global_1940_Alpha_3.Americans;objectiveAttachment_Americans_4_Philippines=<b>5 PUs</b> if USA is at war and the Philippines is American-controlled.
-World_War_II_Global_1940_Alpha_3.Americans;triggerAttachment_Americans_5_Presence_In_France=<b>5 PUs</b> each turn the USA has one land unit in France.
-
-
-World_War_II_Global_1940_Alpha_3.Chinese;objectiveAttachment_Chinese_1_Burma_Road=<b>6 PUs</b> and may build artillery if the Allies control India, Burma, Yunnan, and Szechwan.
-
-
-World_War_II_Global_1940_Alpha_3.British;objectiveAttachment_British_1_Original=<b>5 PUs</b> for UK Europe if UK Europe controls of its original territories.
-World_War_II_Global_1940_Alpha_3.British;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya=<b>5 PUs</b> for UK Pacific if UK Pacific controls both Kwangtung and Malaya, and is at war with Japan.
-
-
-World_War_II_Global_1940_Alpha_3.Italians;objectiveAttachment_Italians_1_Control_The_Mediterranean=<b>5 PUs</b> if no Allied surface ships are in the Med: sz92,...,sz99.
-World_War_II_Global_1940_Alpha_3.Italians;objectiveAttachment_Italians_2_Roman_Empire=<b>5 PUs</b> if Axis control at least 3 of: Gibraltar, Egypt, Southern France and Greece.
-World_War_II_Global_1940_Alpha_3.Italians;objectiveAttachment_Italians_3_North_Africa=<b>5 PUs</b> if Axis controll all of: Morocco, Algeria, Tunisia, Libya, Tobruk, and Alexandria.
-World_War_II_Global_1940_Alpha_3.Italians;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for each Italian controlled territory: Iraq or Persia or Northwest Persia.
-
-
-World_War_II_Global_1940_Alpha_3.ANZAC;triggerAttachment_ANZAC_1_Control_Original_And_Malaya=<b>5 PUs</b> if the Allies control Malaya, and ANZAC controls all of their original territories, and is at war with Japan.
-World_War_II_Global_1940_Alpha_3.ANZAC;objectiveAttachment_ANZAC_2_Control_Strategic_Islands=<b>5 PUs</b> if the Allies (not including Dutch) control all of Dutch New Guinea, New Guinea, New Britain, and the Solomon Islands, and is at war with Japan.
-
-
-World_War_II_Global_1940_Alpha_3.French;conditionAttachment_French_1_Liberation_Switch=<b>12 PUs</b> worth of free units in France the first time France is Liberated (The engine will give you 4 infantry automatically. Use edit mode if you want something other than 4 infantry by deleting the infantry and replacing them with what you really want).
-
-
-World_War_II_Global_1940_Alpha_3.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 8 European Victory Cities OR 6 Pacific Victory Cities where at least one is Rome/Berlin/Japan.
-World_War_II_Global_1940_Alpha_3.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> Berlin and Rome and Japan are under allied control and allies maintain control of one of their own capitals.
-
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.01;Germans=objectiveAttachment_Germans_1_Trade_with_Russia;objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia;objectiveAttachment_Germans_3_Control_Caucasus;triggerAttachment_Germans_4_Presence_In_Egypt;triggerAttachment_Germans_5_Swedish_Iron_Ore;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.02;Russians=triggerAttachment_Russians_1_Lend_Lease;objectiveAttachment_Russians_2_Spread_Of_Communism;objectiveAttachment_Russians_3_Berlin
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.03;Japanese=objectiveAttachment_Japanese_1_Trade_With_America;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.04;Americans=objectiveAttachment_Americans_1_Homeland;objectiveAttachment_Americans_2_Outer_Territories;objectiveAttachment_Americans_3_Defense_Obligations;objectiveAttachment_Americans_4_Philippines;triggerAttachment_Americans_5_Presence_In_France
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.05;Chinese=objectiveAttachment_Chinese_1_Burma_Road
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.06;British=objectiveAttachment_British_1_Original;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.07;Italians=objectiveAttachment_Italians_1_Control_The_Mediterranean;objectiveAttachment_Italians_2_Roman_Empire;objectiveAttachment_Italians_3_North_Africa;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.08;ANZAC=triggerAttachment_ANZAC_1_Control_Original_And_Malaya;objectiveAttachment_ANZAC_2_Control_Strategic_Islands
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.09;French=conditionAttachment_French_1_Liberation_Switch;objectiveAttachment_French_1_Original
-WWII_Global_1940_Alpha_3_Balanced_Mod.TABLEGROUP.10;Victory_Conditions=triggerAttachmentAxisVictory1;triggerAttachmentAlliedVictory1
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.Germans;objectiveAttachment_Germans_1_Trade_with_Russia=<b>5 PUs</b> if not yet at war with Russia.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Germans;objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia=<b>5 PUs</b> for each German controlled territory: Volgograd or Novgorod or Russia.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Germans;objectiveAttachment_Germans_3_Control_Caucasus=<b>5 PUs</b> if Axis controls the Caucasus.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Germans;triggerAttachment_Germans_4_Presence_In_Egypt=<b>5 PUs</b> if there is at least one German land unit in Egypt, whether or not it is controlled by Italy or Germany or Japan.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Germans;triggerAttachment_Germans_5_Swedish_Iron_Ore=<b>5 PUs</b> if Germany controls both Denmark and Norway and Sweden is not allied-controlled or pro-allied.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Germans;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for each German controlled territory: Iraq or Persia or Northwest Persia.
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.Russians;triggerAttachment_Russians_1_Lend_Lease=<b>5 PUs</b> if Russia is at war, sz125 has no Axis warships (all sea units except transports), Archangel is Russia-controlled, and there are no allied units in any originally Russian territories.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Russians;objectiveAttachment_Russians_2_Spread_Of_Communism=<b>3 PUs</b> for each originally German, Italian, or Pro-Axis neutral territory in Europe with a PU value, that Russia controls.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Russians;objectiveAttachment_Russians_3_Berlin=<b>10 PUs</b> one time only, the first time Russia conquers Germany (Berlin).
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.Japanese;objectiveAttachment_Japanese_1_Trade_With_America=<b>10 PUs</b> if not yet at war with USA, has not yet attacked French Indo-China, and has not declared war on UK or ANZAC.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Japanese;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter=<b>5 PUs</b> if Axis controls 4 of Guam, Midway, Wake Island, Gilbert Islands, Solomon Islands, and Marshall Islands.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Japanese;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States=<b>5 PUs</b> for each Axis controlled territory: Hawaii, India, New South Wales, and Western United States.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Japanese;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies=<b>5 PUs</b> if Axis controls all of Sumatra, Java, Borneo, and Celebes.
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.Americans;objectiveAttachment_Americans_1_Homeland=<b>10 PUs</b> if USA is at war and EUS, WUS, and CUS are American-controlled.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Americans;objectiveAttachment_Americans_2_Outer_Territories=<b>5 PUs</b> if USA is at war and Alaska, Aleutian Islands, Hawaiian Islands, and Johnston Island, and Line Islands are American-controlled.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Americans;objectiveAttachment_Americans_3_Defense_Obligations=<b>5 PUs</b> if USA is at war and Mexico, South Eastern Mexico, Central America, and West Indies are American-controlled.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Americans;objectiveAttachment_Americans_4_Philippines=<b>5 PUs</b> if USA is at war and the Philippines is American-controlled.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Americans;triggerAttachment_Americans_5_Presence_In_France=<b>5 PUs</b> each turn the USA has one land unit in France.
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.Chinese;objectiveAttachment_Chinese_1_Burma_Road=<b>6 PUs</b> and may build artillery if the Allies control India, Burma, Yunnan, and Szechwan.
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.British;objectiveAttachment_British_1_Original=<b>5 PUs</b> for UK Europe if UK Europe controls of its original territories.
-WWII_Global_1940_Alpha_3_Balanced_Mod.British;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya=<b>5 PUs</b> for UK Pacific if UK Pacific controls both Kwangtung and Malaya, and is at war with Japan.
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.Italians;objectiveAttachment_Italians_1_Control_The_Mediterranean=<b>5 PUs</b> if no Allied surface ships are in the Med: sz92,...,sz99.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Italians;objectiveAttachment_Italians_2_Roman_Empire=<b>5 PUs</b> if Axis control at least 3 of: Gibraltar, Egypt, Southern France and Greece.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Italians;objectiveAttachment_Italians_3_North_Africa=<b>5 PUs</b> if Axis controll all of: Morocco, Algeria, Tunisia, Libya, Tobruk, and Alexandria.
-WWII_Global_1940_Alpha_3_Balanced_Mod.Italians;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for each Italian controlled territory: Iraq or Persia or Northwest Persia.
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.ANZAC;triggerAttachment_ANZAC_1_Control_Original_And_Malaya=<b>5 PUs</b> if the Allies control Malaya, and ANZAC controls all of their original territories, and is at war with Japan.
-WWII_Global_1940_Alpha_3_Balanced_Mod.ANZAC;objectiveAttachment_ANZAC_2_Control_Strategic_Islands=<b>5 PUs</b> if the Allies (not including Dutch) control all of Dutch New Guinea, New Guinea, New Britain, and the Solomon Islands, and is at war with Japan.
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.French;conditionAttachment_French_1_Liberation_Switch=<b>12 PUs</b> worth of free units in France the first time France is Liberated (The engine will give you 4 infantry automatically. Use edit mode if you want something other than 4 infantry by deleting the infantry and replacing them with what you really want).
-WWII_Global_1940_Alpha_3_Balanced_Mod.French;objectiveAttachment_French_1_Original=<b>5 PUs</b> if the French controll all their original territories.
-
-
-WWII_Global_1940_Alpha_3_Balanced_Mod.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 8 European Victory Cities OR 6 Pacific Victory Cities where at least one is Rome/Berlin/Japan.
-WWII_Global_1940_Alpha_3_Balanced_Mod.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> Berlin and Rome and Japan are under allied control and allies maintain control of one of their own capitals.
 
 
 
@@ -186,6 +62,93 @@ World_War_II_Global_1940_2nd_Edition.French;conditionAttachment_French_1_Liberat
 
 World_War_II_Global_1940_2nd_Edition.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 8 European Victory Cities OR 6 Pacific Victory Cities where at least one is Rome/Berlin/Japan.
 World_War_II_Global_1940_2nd_Edition.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> Berlin and Rome and Japan are under allied control and allies maintain control of one of their own capitals.
+
+
+
+UHD_World_War_II_Global.TABLEGROUP.01;Germans=objectiveAttachment_Germans_1_Trade_with_Russia;objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia;objectiveAttachment_Germans_3_Control_Caucasus;triggerAttachment_Germans_4_Presence_In_Egypt;triggerAttachment_Germans_5_Swedish_Iron_Ore;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia;triggerAttachment_Germans_BM_Presence_In_Egypt_Or_London;objectiveAttachment_Germans_BM_Control_of_Balkans
+UHD_World_War_II_Global.TABLEGROUP.02;Russians=triggerAttachment_Russians_1_Lend_Lease;objectiveAttachment_Russians_2_Spread_Of_Communism;objectiveAttachment_Russians_3_Berlin;objectiveAttachment_Russians_BM_Spread_Of_Communism;triggerAttachment_Russians_BM_Great_Patriotic_War;triggerAttachment_Russians_BM_Archangel_Lend_Lease_Lane;triggerAttachment_Russians_BM_Persia_Lend_Lease_Lane;triggerAttachment_Russians_BM_Siberia_Lend_Lease_Lane;triggerAttachment_Russians_BM_Increased_Lend_Lease_War_With_Japanese
+UHD_World_War_II_Global.TABLEGROUP.03;Japanese=objectiveAttachment_Japanese_1_Trade_With_America;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies;objectiveAttachment_Japanese_BM_Strategic_Defense_Perimeter;objectiveAttachment_Japanese_BM_Pacific_Airfields;objectiveAttachment_Japanese_BM_Home_Islands
+UHD_World_War_II_Global.TABLEGROUP.04;Americans=objectiveAttachment_Americans_1_Homeland;objectiveAttachment_Americans_2_Outer_Territories;objectiveAttachment_Americans_3_Defense_Obligations;objectiveAttachment_Americans_4_Philippines;triggerAttachment_Americans_5_Presence_In_France;triggerAttachment_Americans_BM_Western_Europe_Beach_Head;triggerAttachment_Americans_BM_North_Africa_Beach_Head;objectiveAttachment_Americans_BM_Pacific_Airfields;objectiveAttachment_Americans_BM_Vital_Forward_Bases
+UHD_World_War_II_Global.TABLEGROUP.05;Chinese=objectiveAttachment_Chinese_1_Burma_Road;objectiveAttachment_Chinese_BM_Burma_Road
+UHD_World_War_II_Global.TABLEGROUP.06;British=objectiveAttachment_British_1_Original;objectiveAttachment_British_BM_Original;objectiveAttachment_British_BM_Southern_Europe_Beach_Head;triggerAttachment_British_BM_No_Enemy_Submarines;objectiveAttachment_British_BM_Control_Convoy_Lanes
+UHD_World_War_II_Global.TABLEGROUP.07;UK_Pacific=objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya;objectiveAttachment_UK_Pacific_BM_Kwangtung_And_Malaya;triggerAttachment_UK_Pacific_BM_No_Enemy_Submarines
+UHD_World_War_II_Global.TABLEGROUP.08;Italians=objectiveAttachment_Italians_1_Control_The_Mediterranean;objectiveAttachment_Italians_2_Roman_Empire;objectiveAttachment_Italians_3_North_Africa;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia;objectiveAttachment_Italians_BM_North_Africa_Control;objectiveAttachment_Italians_BM_Control_Convoy_Lanes
+UHD_World_War_II_Global.TABLEGROUP.09;ANZAC=triggerAttachment_ANZAC_1_Control_Original_And_Malaya;objectiveAttachment_ANZAC_2_Control_Strategic_Islands
+UHD_World_War_II_Global.TABLEGROUP.10;French=conditionAttachment_French_1_Liberation_Switch
+UHD_World_War_II_Global.TABLEGROUP.11;Victory_Conditions=triggerAttachmentAxisVictory1;triggerAttachmentAlliedVictory1
+
+
+UHD_World_War_II_Global.Germans;objectiveAttachment_Germans_1_Trade_with_Russia=<b>5 PUs</b> if not yet at War with Russia.
+UHD_World_War_II_Global.Germans;objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia=<b>5 PUs</b> for Each German Controlled Territory: Volgograd or Novgorod or Russia.
+UHD_World_War_II_Global.Germans;objectiveAttachment_Germans_3_Control_Caucasus=<b>5 PUs</b> if Axis Controls the Caucasus.
+UHD_World_War_II_Global.Germans;triggerAttachment_Germans_4_Presence_In_Egypt=<b>5 PUs</b> if there is at Least One German Land Unit in Egypt, Whether or Not it is Controlled by Italy or Germany or Japan.
+UHD_World_War_II_Global.Germans;triggerAttachment_Germans_5_Swedish_Iron_Ore=<b>5 PUs</b> if Germany Controls both Denmark and Norway and Sweden is Not Allied-Controlled or Pro-Allied.
+UHD_World_War_II_Global.Germans;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for Each German Controlled Territory: Iraq or Persia or Northwest Persia.
+UHD_World_War_II_Global.Germans;triggerAttachment_Germans_BM_Presence_In_Egypt_Or_London=<b>5 PUs</b> When BM Rules Option is on and there is at Least One German Land Unit in Either Egypt or United Kingdom.
+UHD_World_War_II_Global.Germans;objectiveAttachment_Germans_BM_Control_of_Balkans=<b>2 PUs</b> When BM Rules Option is on and Romania, Yugoslavia, Albania, Bulgaria, Greece and Crete are Axis or Pro-Axis Controlled.
+
+
+UHD_World_War_II_Global.Russians;triggerAttachment_Russians_1_Lend_Lease=<b>5 PUs</b> if Russia is at War, SZ 125 has No Axis Warships (all sea units except Transports), Archangel is Russia-Controlled, and there are No Allied Units in Any Originally Russian Territories.
+UHD_World_War_II_Global.Russians;objectiveAttachment_Russians_2_Spread_Of_Communism=<b>3 PUs</b> for Each Originally German, Italian, or Pro-Axis Neutral Territory that Russia Controls.
+UHD_World_War_II_Global.Russians;objectiveAttachment_Russians_3_Berlin=<b>10 PUs</b> One Time Only, the First Time Russia Conquers Germany (Berlin).
+UHD_World_War_II_Global.Russians;objectiveAttachment_Russians_BM_Spread_Of_Communism=<b>3 PUs</b> When BM Rules Option is on for Each Originally German, Italian, or Pro-Axis <b>EUORPEAN</b> Neutral Territory that Russia Controls. Negates Russians_Spread_Of_Communism.
+UHD_World_War_II_Global.Russians;triggerAttachment_Russians_BM_Great_Patriotic_War=<b>3 PUs</b> When BM Rules Option is on and Russia is at War with European Axis and there are No Allied Units in Any Originally Russian Territories.
+UHD_World_War_II_Global.Russians;triggerAttachment_Russians_BM_Archangel_Lend_Lease_Lane=<b>2 PUs</b> When BM Rules Option is on and Russia is at War with European Axis Beyond Round 2, Archangel is Allied-Controlled, and SZ 125 has No Enemy Warships ("Northern Route").
+UHD_World_War_II_Global.Russians;triggerAttachment_Russians_BM_Persia_Lend_Lease_Lane=<b>2 PUs</b> When BM Rules Option is on and Russia is at War with European Axis Beyond Round 2, Persia is Allied-Controlled, and SZ 80 has No Enemy Warships ("Persian Corridor").
+UHD_World_War_II_Global.Russians;triggerAttachment_Russians_BM_Siberia_Lend_Lease_Lane=<b>2 PUs</b> When BM Rules Option is on and Russia is at War with European Axis Beyond Round 2, Amur is Russian-controlled, and SZ 5 has No Enemy Warships ("Pacific Route").
+UHD_World_War_II_Global.Russians;triggerAttachment_Russians_BM_Increased_Lend_Lease_War_With_Japanese=Additional <b>2 PUs</b> When BM Rules Option is on for Each Lend-Lease Route that is Open Beyond Round 2 if Japan has Declared War on Russia.
+
+UHD_World_War_II_Global.Japanese;objectiveAttachment_Japanese_1_Trade_With_America=<b>10 PUs</b> if not yet at war with USA, has not yet Attacked French Indo-China, and has not Declared War on UK or ANZAC.
+UHD_World_War_II_Global.Japanese;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter=<b>5 PUs</b> if Axis Controls All of Guam, Midway, Wake Island, Gilbert Islands, and Solomon Islands.
+UHD_World_War_II_Global.Japanese;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States=<b>5 PUs</b> for each Axis Controlled Territory: Hawaii, India, New South Wales, and Western United States.
+UHD_World_War_II_Global.Japanese;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies=<b>5 PUs</b> if Axis Controls all of Sumatra, Java, Borneo, and Celebes.
+UHD_World_War_II_Global.Japanese;objectiveAttachment_Japanese_BM_Strategic_Defense_Perimeter=<b>5 PUs</b> When BM Rules Option is on and Axis Controls Dutch New Guinea, New Guinea, New Britain, and Solomon Islands. Negates Strategic Defense Perimeter
+UHD_World_War_II_Global.Japanese;objectiveAttachment_Japanese_BM_Pacific_Airfields=<b>5 PUs</b> When BM Rules Option is on and Midway, Wake Island, and Guam are Axis-Controlled.
+UHD_World_War_II_Global.Japanese;objectiveAttachment_Japanese_BM_Home_Islands=<b>3 PUs</b> When BM Rules Option is on and Japan Controls Okinawa and Iwo Jima and is at War with the United States.
+
+
+UHD_World_War_II_Global.Americans;objectiveAttachment_Americans_1_Homeland=<b>10 PUs</b> if USA is at War and EUS, WUS, and CUS are American-Controlled.
+UHD_World_War_II_Global.Americans;objectiveAttachment_Americans_2_Outer_Territories=<b>5 PUs</b> if USA is at War and Alaska, Aleutian Islands, Hawaiian Islands, and Johnston Island, and Line Islands are American-Controlled.
+UHD_World_War_II_Global.Americans;objectiveAttachment_Americans_3_Defense_Obligations=<b>5 PUs</b> if USA is at War and Mexico, South Eastern Mexico, Central America, and West Indies are American-Controlled.
+UHD_World_War_II_Global.Americans;objectiveAttachment_Americans_4_Philippines=<b>5 PUs</b> if USA is at War and the Philippines is American-Controlled.
+UHD_World_War_II_Global.Americans;triggerAttachment_Americans_5_Presence_In_France=<b>5 PUs</b> each turn the USA has one Land Unit in France.
+UHD_World_War_II_Global.Americans;triggerAttachment_Americans_BM_Western_Europe_Beach_Head=<b>5 PUs</b> When BM Rules Option is on and Allies Control at Least 2 of: Normandy Bordeaux, Holland Belgium, Southern France, and USA has at Least One Land Unit in Any of these Territories.
+UHD_World_War_II_Global.Americans;triggerAttachment_Americans_BM_North_Africa_Beach_Head=<b>5 PUs</b> When BM Rules Option is on and Morocco, Algeria, and Tunisia are Allied-Controlled and the USA has at Least One Land Unit in Any of these Territories.
+UHD_World_War_II_Global.Americans;objectiveAttachment_Americans_BM_Pacific_Airfields=<b>5 PUs</b> When BM Rules Option is on and USA is at War, if Midway, Wake Island, and Guam are Allied-Controlled.
+UHD_World_War_II_Global.Americans;objectiveAttachment_Americans_BM_Vital_Forward_Bases=<b>5 PUs</b> When BM Rules Option is on and USA is at War, if Marshall Islands, Caroline Islands, Paulau Island, and Marianas are Allied-Controlled.
+
+
+UHD_World_War_II_Global.Chinese;objectiveAttachment_Chinese_1_Burma_Road=<b>6 PUs</b> and may Build Artillery if the Allies Control India, Burma, Yunnan, and Szechwan.
+UHD_World_War_II_Global.Chinese;objectiveAttachment_Chinese_BM_Burma_Road=<b>3 PUs</b> When BM Rules Option is on and may Build Artillery if the Allies Control India, Burma, Yunnan, and Szechwan.
+
+
+UHD_World_War_II_Global.British;objectiveAttachment_British_1_Original=<b>5 PUs</b> for UK Europe if UK Europe Controls All of its Original Territories.
+UHD_World_War_II_Global.UK_Pacific;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya=<b>5 PUs</b> for UK Pacific if UK Pacific Controls both Kwangtung and Malaya, and is at War with Japan.
+UHD_World_War_II_Global.UK_Pacific;objectiveAttachment_UK_Pacific_BM_Kwangtung_And_Malaya=<b>3 PUs</b> When BM Rules Option is on for UK Pacific if UK Pacific Controls both Kwangtung and Malaya, and is at War with Japan.
+UHD_World_War_II_Global.British;objectiveAttachment_British_BM_Original=<b>3 PUs</b> When BM Rules Option is on for UK Europe if UK Europe Controls All of its Original Territories.
+UHD_World_War_II_Global.British;objectiveAttachment_British_BM_Southern_Europe_Beach_Head=<b>3 PUs</b> When BM Rules Option is on for UK Europe if Allies Control Two of: Sicily, Sardinia, Greece, Southern Italy, and Allies have at Least One Land Unit in any of these Territories.
+UHD_World_War_II_Global.British;objectiveAttachment_British_BM_Control_Convoy_Lanes=<b>3 PUs</b> When BM Rules Option is on for UK Europe if Malta, Crete, and Cyprus are Allied or Pro-Allied Controlled.
+UHD_World_War_II_Global.British;triggerAttachment_British_BM_No_Enemy_Submarines=<b>3 PUs</b> When BM Rules Option is on for UK Europe and there are No Enemy Submarines in any Atlantic Ocean Sea Zones, Excluding SZ 112 and SZ 125,...,sz127.
+UHD_World_War_II_Global.UK_Pacific;triggerAttachment_UK_Pacific_BM_No_Enemy_Submarines=<b>3 PUs</b> When BM Rules Option is on and is at War with Japan for UK Pacific and UK Pacific Controls West India, and Either Egypt or Union of South Africa is Allied-Controlled, and there are No Enemy Submarines in the Western Half of the Indian Ocean (sz71,...,81).
+
+
+UHD_World_War_II_Global.Italians;objectiveAttachment_Italians_1_Control_The_Mediterranean=<b>5 PUs</b> if No Allied Surface Ships are in the Med: sz92,...,sz99.
+UHD_World_War_II_Global.Italians;objectiveAttachment_Italians_2_Roman_Empire=<b>5 PUs</b> if Axis Control at Least 3 of: Gibraltar, Egypt, Southern France and Greece.
+UHD_World_War_II_Global.Italians;objectiveAttachment_Italians_3_North_Africa=<b>5 PUs</b> if Axis Controll All of: Morocco, Algeria, Tunisia, Libya, Tobruk, and Alexandria.
+UHD_World_War_II_Global.Italians;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for Each Italian Controlled Territory: Iraq or Persia or Northwest Persia.
+UHD_World_War_II_Global.Italians;objectiveAttachment_Italians_BM_North_Africa_Control=<b>5 PUs</b> When BM Rules Option is on and Axis Controll All of: Morocco, Algeria, Tunisia, Libya, Tobruk, and Alexandria.
+UHD_World_War_II_Global.Italians;objectiveAttachment_Italians_BM_Control_Convoy_Lanes=<b>3 PUs</b> When BM Rules Option is on and Malta, Crete, and Cyprus are Axis Controlled.
+
+
+UHD_World_War_II_Global.ANZAC;triggerAttachment_ANZAC_1_Control_Original_And_Malaya=<b>5 PUs</b> if the Allies Control Malaya, and ANZAC Controls All of Their Original Territories, and is at War with Japan.
+UHD_World_War_II_Global.ANZAC;objectiveAttachment_ANZAC_2_Control_Strategic_Islands=<b>5 PUs</b> if the Allies (not including Dutch) Control All of Dutch New Guinea, New Guinea, New Britain, and the Solomon Islands, and is at War with Japan.
+
+
+UHD_World_War_II_Global.French;conditionAttachment_French_1_Liberation_Switch=<b>12 PUs</b> worth of Free Units in France the First Time France is Liberated (The engine will give you 4 Infantry automatically. Use Edit Mode if you want something other than 4 Infantry by Deleting the Infantry and Replacing them with what you really want).
+
+
+UHD_World_War_II_Global.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 8 European Victory Cities OR 6 Pacific Victory Cities where at Least One is Rome/Berlin/Japan.
+UHD_World_War_II_Global.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> Berlin and Rome and Japan are under Allied Control and Allies Maintain Control of One of Their Own Capitals.
 
 
 
