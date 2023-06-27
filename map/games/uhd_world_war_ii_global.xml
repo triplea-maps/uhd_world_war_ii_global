@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.5"/>
+  <info name="UHD World War II Global" version="2.6"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -16886,9 +16886,14 @@ Rules are Below.<br>
 <br>
 Change Log:<br>
 <br>
-2.5<br>
+2.6<br>
 6-27-23<br>
 Adds the BM 3 Mod.
+<br>
+<br>
+2.5<br>
+6-22-23<br>
+Fix Northern Territory Connection.
 <br>
 <br>
 2.4<br>
