@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.62"/>
+  <info name="UHD World War II Global" version="2.64"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -16885,6 +16885,16 @@ You will need to Turn On "BM Rules" "BM Vichy Rule" "Bombers Cost 14" and "BM Ch
 Rules are Below.<br>
 <br>
 Change Log:<br>
+<br>
+2.64<br>
+8-?-23<br>
+Change 8 Sea Zone Place.
+<br>
+<br>
+2.63<br>
+7-18-23<br>
+Adjust "Kwangsi" Name. Replace German Black "Armour" with Grey.
+<br>
 <br>
 2.62<br>
 7-18-23<br>
