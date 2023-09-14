@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.64"/>
+  <info name="UHD World War II Global" version="2.65"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -16885,6 +16885,11 @@ You will need to Turn On "BM Rules" "BM Vichy Rule" "Bombers Cost 14" and "BM Ch
 Rules are Below.<br>
 <br>
 Change Log:<br>
+<br>
+2.65<br>
+9-14-23<br>
+Adjust Saharra Impassable. Change W UKR and Slovakia Overflow.
+<br>
 <br>
 2.64<br>
 8-24-23<br>
