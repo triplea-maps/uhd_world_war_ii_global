@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.64"/>
+  <info name="UHD World War II Global" version="2.641"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -16867,8 +16867,8 @@
 <b>Credits:</b> Bung, Veqryn<br><br>
 
 <b>UHD World War II Global</b><br><br>
-This is the Black Elk Mega Map for the Above Game. All Rules are the Same.<br><br>
-This Map Uses the Frostion Units as Default.<br> If you would like to change to Version 3 Units, you need to open your triplea folder.<br>
+This is the <b>Black Elk Mega Map</b> for the Above Game. All Rules are the Same.<br><br>
+This Map Uses the <b>Frostion</b> Units as Default as well as some <b>Black Elk</b> Units.<br> If you would like to change to Version 3 Units, you need to open your triplea folder.<br>
 Go to downloadedMaps<br>
 Go to Uhd World War II Global <br>
 Open Folder<br>
@@ -16886,9 +16886,14 @@ Rules are Below.<br>
 <br>
 Change Log:<br>
 <br>
-2.64<br>
+2.641<br>
 8-?-23<br>
-Change 8 Sea Zone Place.
+Adjust Saharra Impassable.
+<br>
+<br>
+2.64<br>
+8-24-23<br>
+Change 8 Sea Zone Place. Update Game Notes for 2.6 Prerelease.
 <br>
 <br>
 2.63<br>
