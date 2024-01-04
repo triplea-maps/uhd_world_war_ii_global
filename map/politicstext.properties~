@@ -142,14 +142,6 @@ Russians_War_Germans.NOTIFICATION_FAILURE=NONE
 Russians_War_Germans.OTHER_NOTIFICATION_FAILURE=NONE
 Russians_War_Germans.ACCEPT_QUESTION=NONE
 
-Russians_War_Germans41oz.BUTTON=Declare War!
-Russians_War_Germans41oz.DESCRIPTION=Declare War on Germany!
-Russians_War_Germans41oz.NOTIFICATION_SUCCESS=You declared war on Germany!
-Russians_War_Germans41oz.OTHER_NOTIFICATION_SUCCESS=Russia has declared war on Germany!
-Russians_War_Germans41oz.NOTIFICATION_FAILURE=NONE
-Russians_War_Germans410z.OTHER_NOTIFICATION_FAILURE=NONE
-Russians_War_Germans41oz.ACCEPT_QUESTION=NONE
-
 Russians_War_Italians.BUTTON=Declare War!
 Russians_War_Italians.DESCRIPTION=Declare War on Italy!
 Russians_War_Italians.NOTIFICATION_SUCCESS=You declared war on Italy!

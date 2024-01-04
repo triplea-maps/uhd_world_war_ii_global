@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.71"/>
+  <info name="UHD World War II Global" version="2.8"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
   <map>
     <!-- Full europe list:
-				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Eastern Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:Sahara Desert
+				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Eastern Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:Sahara Desert:Bermuda
 				-->
     <!-- Border territories:
 				Evenkiyskiy:Urals:Novosibirsk:Himalayas:Kazakhstan:Timguska:India:Sikang:Tsinghai:Kansu
@@ -147,6 +147,7 @@
     <territory name="1 Sea Zone" water="true"/>
     <territory name="7 Sea Zone" water="true"/>
     <territory name="Himalayas"/>
+    <territory name="Bermuda"/>
     <territory name="8 Sea Zone" water="true"/>
     <territory name="9 Sea Zone" water="true"/>
     <territory name="3 Sea Zone" water="true"/>
@@ -3166,6 +3167,10 @@
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
+    <attachment name="territoryAttachment" attachTo="Bermuda" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+      <option name="isImpassable" value="false"/>
+    </attachment>
     <attachment name="territoryAttachment" attachTo="Sahara Desert" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
       <option name="isImpassable" value="true"/>
@@ -4304,6 +4309,1718 @@
       <option name="conditions" value="conditionAttachment_Germans_5_Allies_Do_Not_Control_Sweden:conditionAttachment_Germans_5_Sweden_Axis_Or_ProAxis_Or_Strict"/>
       <option name="conditionType" value="AND"/>
     </attachment>
+
+    <!-- 41 Oztea -->
+    <attachment name="41oz" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Oztea 1941"/>
+    </attachment>
+    <attachment name="41ozInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Oztea 1941"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachmentTurn1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="1-+"/>
+    </attachment>
+    <!-- 41 OZ Setup Finland -->
+    <attachment name="triggerAttachment_Finland41Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Finland:infantry" count="4"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Finland41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Finland:Neutral_Axis:Germans:true"/>
+      <option name="placement" value="Finland:infantry" count="2"/>
+      <option name="placement" value="Finland:artillery" count="1"/>
+      <option name="placement" value="Finland:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup France -->
+    <attachment name="triggerAttachment_France41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="France:infantry" count="6"/>
+      <option name="removeUnits" value="France:artillery" count="1"/>
+      <option name="removeUnits" value="France:armour" count="1"/>
+      <option name="removeUnits" value="France:fighter" count="1"/>
+      <option name="removeUnits" value="France:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_France41RemoveUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="France:artillery" count="1"/>
+      <option name="removeUnits" value="France:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_France41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="France:French:Germans:true"/>
+      <option name="placement" value="France:infantry" count="2"/>
+      <option name="placement" value="France:fighter" count="1"/>
+      <option name="placement" value="France:armour" count="1"/>
+      <option name="placement" value="France:tactical_bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Normandy -->
+    <attachment name="triggerAttachment_Normandy41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Normandy Bordeaux:infantry" count="1"/>
+      <option name="removeUnits" value="Normandy Bordeaux:artillery" count="1"/>
+      <option name="removeUnits" value="Normandy Bordeaux:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Normandy41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Normandy Bordeaux:French:Germans:true"/>
+      <option name="placement" value="Normandy Bordeaux:infantry" count="2"/>
+      <option name="placement" value="Normandy Bordeaux:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Southern France -->
+    <attachment name="triggerAttachment_SFRA41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Southern France:infantry" count="1"/>
+      <option name="removeUnits" value="Southern France:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_SFRA41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Southern France:French:Germans:true"/>
+      <option name="placement" value="Southern France:infantry" count="1"/>
+      <option name="placement" value="Southern France:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_SFRA41Italy" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Southern France:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Morocco -->
+    <attachment name="triggerAttachment_Morocco41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Morocco:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Morocco41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Morocco:French:Germans:true"/>
+      <option name="placement" value="Morocco:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Algeria -->
+    <attachment name="triggerAttachment_Algeria41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Algeria:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Algeria41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Algeria:French:Germans:true"/>
+      <option name="placement" value="Algeria:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Algeria -->
+    <attachment name="triggerAttachment_Algeria41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Algeria:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Algeria41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Algeria:French:Germans:true"/>
+      <option name="placement" value="Algeria:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup French West Africa -->
+    <attachment name="triggerAttachment_FWAF41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="French West Africa:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FWAF41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="French West Africa:French:Germans:true"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup French Central Africa -->
+    <attachment name="triggerAttachment_FCAF41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="French Central Africa:French:Germans:true"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup French Madagascar -->
+    <attachment name="triggerAttachment_Madagascar41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="French Madagascar:French:Germans:true"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Syria -->
+    <attachment name="triggerAttachment_Syria41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Syria:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Syria41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Syria:French:Germans:true"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Bulgaria -->
+    <attachment name="triggerAttachment_Bulgaria41Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Bulgaria:infantry" count="4"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Bulgaria41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Bulgaria:Neutral_Axis:Germans:true"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Tunisia -->
+    <attachment name="triggerAttachment_Tunisia41Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Tunisia:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Tunisia41" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Tunisia:French:Italians:true"/>
+      <option name="placement" value="Tunisia:infantry" count="1"/>
+      <option name="placement" value="Tunisia:mech_infantry" count="1"/>
+      <option name="placement" value="Tunisia:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Tunisia41Reich" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Tunisia:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Germany -->
+    <attachment name="triggerAttachment_Germany41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Germany:bomber" count="1"/>
+      <option name="removeUnits" value="Germany:artillery" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Germany:infantry" count="5"/>
+      <option name="placement" value="Germany:aaGun" count="1"/>
+      <option name="placement" value="Germany:tactical_bomber" count="1"/>
+      <option name="placement" value="Germany:fighter" count="2"/>
+      <option name="placement" value="Germany:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Western Germany -->
+    <attachment name="triggerAttachment_WesternGermany41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Western Germany:mech_infantry" count="3"/>
+      <option name="removeUnits" value="Western Germany:tactical_bomber" count="2"/>
+      <option name="removeUnits" value="Western Germany:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_WesternGermany41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Western Germany:infantry" count="3"/>
+      <option name="placement" value="Western Germany:aaGun" count="1"/>
+      <option name="placement" value="Western Germany:bomber" count="1"/>
+      <option name="placement" value="Western Germany:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Greater Southern Germany -->
+    <attachment name="triggerAttachment_GSG41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Greater Southern Germany:artillery" count="1"/>
+      <option name="removeUnits" value="Greater Southern Germany:armour" count="3"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Greater Slovakia Hungary -->
+    <attachment name="triggerAttachment_Slovakia41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Slovakia Hungary:fighter" count="1"/>
+      <option name="placement" value="Slovakia Hungary:armour" count="2"/>
+      <option name="placement" value="Slovakia Hungary:artillery" count="2"/>
+      <option name="placement" value="Slovakia Hungary:mech_infantry" count="3"/>
+      <option name="placement" value="Slovakia Hungary:infantry" count="6"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Holland -->
+    <attachment name="triggerAttachment_Holland41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Holland Belgium:fighter" count="1"/>
+      <option name="removeUnits" value="Holland Belgium:infantry" count="2"/>
+      <option name="removeUnits" value="Holland Belgium:armour" count="3"/>
+      <option name="removeUnits" value="Holland Belgium:artillery" count="2"/>
+      <option name="placement" value="Holland Belgium:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Southern Italy -->
+    <attachment name="triggerAttachment_SItaly41RemoveReich" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Southern Italy:infantry" count="1"/>
+      <option name="placement" value="Southern Italy:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_SItaly41Remove" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Southern Italy:infantry" count="4"/>
+      <option name="removeUnits" value="Southern Italy:fighter" count="1"/>
+      <option name="placement" value="Southern Italy:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Greece -->
+    <attachment name="triggerAttachment_Greece41Remove" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Greece:infantry" count="4"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Greece41" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Greece:Neutral_Allies:Italians:true"/>
+      <option name="placement" value="Greece:infantry" count="1"/>
+      <option name="placement" value="Greece:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Greece41Reich" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Greece:infantry" count="1"/>
+      <option name="placement" value="Greece:mech_infantry" count="2"/>
+      <option name="placement" value="Greece:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Yugoslavia -->
+    <attachment name="triggerAttachment_Yugoslavia41Remove" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Yugoslavia:infantry" count="5"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Yugoslavia41" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Yugoslavia:Neutral_Allies:Italians:true"/>
+      <option name="placement" value="Yugoslavia:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Yugoslavia41Reich" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Yugoslavia:infantry" count="2"/>
+      <option name="placement" value="Yugoslavia:artillery" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Romania -->
+    <attachment name="triggerAttachment_Romania41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Romania:armour" count="1"/>
+      <option name="placement" value="Romania:infantry" count="4"/>
+      <option name="placement" value="Romania:mech_infantry" count="1"/>
+      <option name="placement" value="Romania:artillery" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Romania41RemoveItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Romania:infantry" count="1"/>
+      <option name="placement" value="Romania:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Poland -->
+    <attachment name="triggerAttachment_Poland41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Poland:tactical_bomber" count="1"/>
+      <option name="placement" value="Poland:armour" count="2"/>
+      <option name="placement" value="Poland:infantry" count="5"/>
+      <option name="placement" value="Poland:mech_infantry" count="3"/>
+      <option name="placement" value="Poland:artillery" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Setup Norway -->
+    <attachment name="triggerAttachment_Norway41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Norway:infantry" count="1"/>
+      <option name="placement" value="Norway:aaGun" count="1"/>
+      <option name="placement" value="Norway:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 113 Sea Zone -->
+    <attachment name="triggerAttachment_11341Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="113 Sea Zone:battleship" count="1"/>
+      <option name="placement" value="113 Sea Zone:submarine" count="2"/>
+      <option name="placement" value="113 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="113 Sea Zone:cruiser" count="1"/>
+      <option name="placement" value="113 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 114 Sea Zone -->
+    <attachment name="triggerAttachment_11441Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="114 Sea Zone:submarine" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 118 Sea Zone -->
+    <attachment name="triggerAttachment_11841Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="118 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="118 Sea Zone:battleship" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 124 Sea Zone -->
+    <attachment name="triggerAttachment_12441Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="124 Sea Zone:submarine" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 108 Sea Zone -->
+    <attachment name="triggerAttachment_10841Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="108 Sea Zone:submarine" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 117 Sea Zone -->
+    <attachment name="triggerAttachment_11741Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="117 Sea Zone:submarine" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 106 Sea Zone -->
+    <attachment name="triggerAttachment_10641Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="106 Sea Zone:submarine" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 93 Sea Zone -->
+    <attachment name="triggerAttachment_9341RemoveFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="93 Sea Zone:destroyer" count="1"/>
+      <option name="removeUnits" value="93 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_9341Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="93 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="93 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 96 Sea Zone -->
+    <attachment name="triggerAttachment_9641RemoveItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="96 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="96 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_9641Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="96 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 93 Sea Zone -->
+    <attachment name="triggerAttachment_9341RemoveItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="93 Sea Zone:cruiser" count="1"/>
+      <option name="placement" value="93 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 97 Sea Zone -->
+    <attachment name="triggerAttachment_9741RemoveItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="97 Sea Zone:cruiser" count="1"/>
+      <option name="removeUnits" value="97 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Libya -->
+    <attachment name="triggerAttachment_Libya41RemoveItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Libya:infantry" count="1"/>
+      <option name="placement" value="Libya:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Albania -->
+    <attachment name="triggerAttachment_Albania41RemoveItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Albania:infantry" count="1"/>
+      <option name="removeUnits" value="Albania:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Northern Italy -->
+    <attachment name="triggerAttachment_Albania41RemoveNItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Northern Italy:artillery" count="2"/>
+      <option name="placement" value="Northern Italy:mech_infantry" count="1"/>
+      <option name="placement" value="Northern Italy:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ British Somaliland -->
+    <attachment name="triggerAttachment_BritishSomaliland41" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="British Somaliland:British:Italians:true"/>
+      <option name="placement" value="British Somaliland:infantry" count="1"/>
+      <option name="placement" value="British Somaliland:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Ethiopia -->
+    <attachment name="triggerAttachment_Ethiopia41" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Ethiopia:Italians:British:true"/>
+      <option name="placement" value="Ethiopia:infantry" count="1"/>
+      <option name="placement" value="Ethiopia:artillery" count="1"/>
+      <option name="placement" value="Ethiopia:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Ethiopia41Italy" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Ethiopia:infantry" count="2"/>
+      <option name="removeUnits" value="Ethiopia:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Tobruk -->
+    <attachment name="triggerAttachment_Tobruk41" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Tobruk:Italians:British:true"/>
+      <option name="placement" value="Tobruk:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Tobruk41Italy" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Tobruk:infantry" count="3"/>
+      <option name="removeUnits" value="Tobruk:mech_infantry" count="1"/>
+      <option name="removeUnits" value="Tobruk:artillery" count="1"/>
+      <option name="removeUnits" value="Tobruk:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Sicily -->
+    <attachment name="triggerAttachment_Albania41RemoveNSicily" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Sicily:infantry" count="1"/>
+      <option name="placement" value="Sicily:tactical_bomber" count="1"/>
+      <option name="placement" value="Sicily:airfield" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Russia -->
+    <attachment name="triggerAttachment_9641RemoveRussia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Russia:infantry" count="5"/>
+      <option name="placement" value="Russia:armour" count="1"/>
+      <option name="placement" value="Russia:bomber" count="1"/>
+      <option name="placement" value="Russia:aaGun" count="2"/>
+      <option name="placement" value="Russia:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Vologda -->
+    <attachment name="triggerAttachment_9641RemoveVologda" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Vologda:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Archangel -->
+    <attachment name="triggerAttachment_9641RemoveArchangel" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Archangel:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Novgorod -->
+    <attachment name="triggerAttachment_9641RemoveNovgorod" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Novgorod:artillery" count="1"/>
+      <option name="placement" value="Novgorod:infantry" count="5"/>
+      <option name="placement" value="Novgorod:mech_infantry" count="2"/>
+      <option name="placement" value="Novgorod:aaGun" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Karelia -->
+    <attachment name="triggerAttachment_9641RemoveKarelia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Karelia:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Vyborg -->
+    <attachment name="triggerAttachment_9641RemoveVyborg" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Vyborg:infantry" count="1"/>
+      <option name="placement" value="Vyborg:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Baltic States -->
+    <attachment name="triggerAttachment_9641RemoveBalticStates" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Baltic States:infantry" count="1"/>
+      <option name="placement" value="Baltic States:mech_infantry" count="1"/>
+      <option name="placement" value="Baltic States:artillery" count="1"/>
+      <option name="placement" value="Baltic States:tactical_bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Eastern Poland -->
+    <attachment name="triggerAttachment_9641RemoveEasternPoland" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Eastern Poland:armour" count="1"/>
+      <option name="placement" value="Eastern Poland:artillery" count="1"/>
+      <option name="placement" value="Eastern Poland:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Western Ukraine -->
+    <attachment name="triggerAttachment_9641RemoveWUKR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Western Ukraine:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Bessarabia -->
+    <attachment name="triggerAttachment_9641RemoveBessarabia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Bessarabia:infantry" count="1"/>
+      <option name="placement" value="Bessarabia:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Ukraine -->
+    <attachment name="triggerAttachment_9641RemoveUKR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Ukraine:infantry" count="1"/>
+      <option name="placement" value="Ukraine:artillery" count="1"/>
+      <option name="placement" value="Ukraine:armour" count="1"/>
+      <option name="placement" value="Ukraine:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Rostov -->
+    <attachment name="triggerAttachment_9641RemoveRostov" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Rostov:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Caucasus -->
+    <attachment name="triggerAttachment_9641RemoveCaucasus" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Caucasus:infantry" count="1"/>
+      <option name="placement" value="Caucasus:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Volgograd -->
+    <attachment name="triggerAttachment_9641RemoveVolgograd" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Volgograd:infantry" count="2"/>
+      <option name="placement" value="Volgograd:artillery" count="2"/>
+      <option name="placement" value="Volgograd:fighter" count="1"/>
+      <option name="placement" value="Volgograd:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Tambov -->
+    <attachment name="triggerAttachment_9641RemoveTambov" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Tambov:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Bryansk -->
+    <attachment name="triggerAttachment_9641RemoveBryansk" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Bryansk:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Smolensk -->
+    <attachment name="triggerAttachment_9641RemoveSmolensk" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Smolensk:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Turkmenistan -->
+    <attachment name="triggerAttachment_9641RemoveTurkmenistan" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Turkmenistan:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Kazakhstan -->
+    <attachment name="triggerAttachment_9641RemoveKazakhstan" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Kazakhstan:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Samara -->
+    <attachment name="triggerAttachment_9641RemoveSamara" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Samara:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Novosibirsk -->
+    <attachment name="triggerAttachment_9641RemoveNovosibirsk" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Novosibirsk:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Timguska -->
+    <attachment name="triggerAttachment_9641RemoveTimguska" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Timguska:infantry" count="4"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Nenetsia -->
+    <attachment name="triggerAttachment_9641RemoveNenetsia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Nenetsia:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Urals -->
+    <attachment name="triggerAttachment_9641RemoveUrals" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Urals:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Evenkiyskiy -->
+    <attachment name="triggerAttachment_9641RemoveEvenkiyskiy" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Evenkiyskiy:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Yenisey -->
+    <attachment name="triggerAttachment_9641RemoveYenisey" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Yenisey:infantry" count="4"/>
+      <option name="placement" value="Yenisey:mech_infantry" count="2"/>
+      <option name="placement" value="Yenisey:artillery" count="1"/>
+      <option name="placement" value="Yenisey:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Yakut S.S.R. -->
+    <attachment name="triggerAttachment_9641RemoveYakut" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Yakut S.S.R.:infantry" count="6"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Buryatia -->
+    <attachment name="triggerAttachment_9641RemoveBuryatia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Buryatia:infantry" count="2"/>
+      <option name="placement" value="Buryatia:mech_infantry" count="2"/>
+      <option name="placement" value="Buryatia:artillery" count="1"/>
+      <option name="placement" value="Buryatia:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Sakha -->
+    <attachment name="triggerAttachment_9641RemoveSakha" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Sakha:infantry" count="5"/>
+      <option name="removeUnits" value="Sakha:aaGun" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Amur -->
+    <attachment name="triggerAttachment_9641RemoveAmur" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Amur:infantry" count="2"/>
+      <option name="placement" value="Amur:fighter" count="1"/>
+      <option name="placement" value="Amur:aaGun" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Siberia -->
+    <attachment name="triggerAttachment_9641RemoveSiberia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Siberia:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Soviet Far East -->
+    <attachment name="triggerAttachment_9641RemoveSFE" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Soviet Far East:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 100 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove100SZ" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="100 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="100 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="100 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 127 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove127SZ" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="127 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 115 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove115SZ" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="115 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 5 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove5SZ" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="5 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Japan -->
+    <attachment name="triggerAttachment_9641RemoveJPN" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Japan:aaGun" count="1"/>
+      <option name="removeUnits" value="Japan:artillery" count="1"/>
+      <option name="removeUnits" value="Japan:bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Korea -->
+    <attachment name="triggerAttachment_9641RemoveKorea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Korea:aaGun" count="2"/>
+      <option name="placement" value="Korea:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Manchuria -->
+    <attachment name="triggerAttachment_9641RemoveManchuria" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Manchuria:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Jehol -->
+    <attachment name="triggerAttachment_9641RemoveJehol" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Jehol:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Chahar -->
+    <attachment name="triggerAttachment_9641RemoveChahar" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Chahar:Chinese:Japanese:true"/>
+      <option name="placement" value="Chahar:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Shantung -->
+    <attachment name="triggerAttachment_9641RemoveShantung" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Shantung:infantry" count="1"/>
+      <option name="removeUnits" value="Shantung:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Anhwe -->
+    <attachment name="triggerAttachment_9641RemoveAnhwe" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Anhwe:Chinese:Japanese:true"/>
+      <option name="placement" value="Anhwe:infantry" count="4"/>
+      <option name="placement" value="Anhwe:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Kiangsu -->
+    <attachment name="triggerAttachment_9641RemoveKiangsu" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Kiangsu:tactical_bomber" count="1"/>
+      <option name="placement" value="Kiangsu:armour" count="1"/>
+      <option name="placement" value="Kiangsu:mech_infantry" count="1"/>
+      <option name="placement" value="Kiangsu:harbour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Kiangsi -->
+    <attachment name="triggerAttachment_9641RemoveKiangsi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Kiangsi:infantry" count="2"/>
+      <option name="removeUnits" value="Kiangsi:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Kwangsi -->
+    <attachment name="triggerAttachment_9641RemoveKwangsi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Kwangsi:infantry" count="2"/>
+      <option name="removeUnits" value="Kwangsi:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Yunnan -->
+    <attachment name="triggerAttachment_9641RemoveYunnan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Yunnan:infantry" count="4"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_9641RemoveYunnanJPN" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Yunnan:Chinese:Japanese:true"/>
+      <option name="placement" value="Yunnan:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ French Indo China -->
+    <attachment name="triggerAttachment_9641RemoveYunnanFIC" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="French Indo China:French:Japanese:true"/>
+      <option name="placement" value="French Indo China:infantry" count="1"/>
+      <option name="placement" value="French Indo China:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Siam -->
+    <attachment name="triggerAttachment_9641RemoveYunnanSiam" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Siam:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Formosa -->
+    <attachment name="triggerAttachment_9641RemoveYunnanFormosa" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Formosa:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Okinawa -->
+    <attachment name="triggerAttachment_9641RemoveYunnanOkinawa" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Okinawa:bomber" count="1"/>
+      <option name="placement" value="Okinawa:airfield" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Marianas -->
+    <attachment name="triggerAttachment_9641RemoveMarianas" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Marianas:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Caroline Islands -->
+    <attachment name="triggerAttachment_9641RemoveCarolineIslands" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Caroline Islands:infantry" count="1"/>
+      <option name="placement" value="Caroline Islands:artillery" count="1"/>
+      <option name="placement" value="Caroline Islands:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 6 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove6SZ" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="6 Sea Zone:tactical_bomber" count="1"/>
+      <option name="removeUnits" value="6 Sea Zone:fighter" count="1"/>
+      <option name="removeUnits" value="6 Sea Zone:carrier" count="1"/>
+      <option name="placement" value="6 Sea Zone:transport" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 19 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove19SZ" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="19 Sea Zone:battleship" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 20 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove20SZ" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="20 Sea Zone:cruiser" count="1"/>
+      <option name="removeUnits" value="20 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 36 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove36SZ" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="36 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="36 Sea Zone:destroyer" count="2"/>
+      <option name="placement" value="36 Sea Zone:cruiser" count="1"/>
+      <option name="placement" value="36 Sea Zone:carrier" count="1"/>
+      <option name="placement" value="36 Sea Zone:fighter" count="1"/>
+      <option name="placement" value="36 Sea Zone:tactical_bomber" count="1"/>
+      <option name="placement" value="36 Sea Zone:battleship" count="1"/>
+      <option name="placement" value="36 Sea Zone:transport" count="1"/>
+      <option name="placement" value="36 Sea Zone:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 25 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove25SZ" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="25 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="25 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="25 Sea Zone:carrier" count="2"/>
+      <option name="placement" value="25 Sea Zone:fighter" count="2"/>
+      <option name="placement" value="25 Sea Zone:tactical_bomber" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 33 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove33SZ" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="33 Sea Zone:carrier" count="1"/>
+      <option name="removeUnits" value="33 Sea Zone:fighter" count="1"/>
+      <option name="removeUnits" value="33 Sea Zone:tactical_bomber" count="1"/>
+      <option name="placement" value="33 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="33 Sea Zone:transport" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 37 Sea Zone -->
+    <attachment name="triggerAttachment_9641Remove37SZUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="37 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_9641Remove37SZ" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="37 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="37 Sea Zone:transport" count="1"/>
+      <option name="placement" value="37 Sea Zone:infantry" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Eastern United States -->
+    <attachment name="triggerAttachment_9641RemoveEUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Eastern United States:infantry" count="5"/>
+      <option name="placement" value="Eastern United States:bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Central United States -->
+    <attachment name="triggerAttachment_9641RemoveCUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Central United States:bomber" count="1"/>
+      <option name="placement" value="Central United States:infantry" count="3"/>
+      <option name="placement" value="Central United States:armour" count="1"/>
+      <option name="placement" value="Central United States:mech_infantry" count="1"/>
+      <option name="placement" value="Central United States:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Western United States -->
+    <attachment name="triggerAttachment_9641RemoveWUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Western United States:mech_infantry" count="2"/>
+      <option name="placement" value="Western United States:infantry" count="2"/>
+      <option name="placement" value="Western United States:tactical_bomber" count="1"/>
+      <option name="placement" value="Western United States:bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Alaska -->
+    <attachment name="triggerAttachment_9641RemoveAK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Alaska:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Hawaiian Islands -->
+    <attachment name="triggerAttachment_9641RemoveHI" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Hawaiian Islands:fighter" count="1"/>
+      <option name="placement" value="Hawaiian Islands:mech_infantry" count="1"/>
+      <option name="placement" value="Hawaiian Islands:artillery" count="1"/>
+      <option name="placement" value="Hawaiian Islands:bomber" count="1"/>
+      <option name="placement" value="Hawaiian Islands:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Midway -->
+    <attachment name="triggerAttachment_9641RemoveMidway" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Midway:infantry" count="1"/>
+      <option name="placement" value="Midway:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Wake Island -->
+    <attachment name="triggerAttachment_9641RemoveWI" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Wake Island:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Philippines -->
+    <attachment name="triggerAttachment_9641RemovePHI" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Philippines:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Central America -->
+    <attachment name="triggerAttachment_9641RemoveCAMR" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Central America:infantry" count="1"/>
+      <option name="placement" value="Central America:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 101 Sea Zone -->
+    <attachment name="triggerAttachment_9641RemoveSZ101" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="101 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="101 Sea Zone:submarine" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 102 Sea Zone -->
+    <attachment name="triggerAttachment_9641RemoveSZ102" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="102 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 64 Sea Zone -->
+    <attachment name="triggerAttachment_9641RemoveSZ64" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="64 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="64 Sea Zone:battleship" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 10 Sea Zone -->
+    <attachment name="triggerAttachment_9641RemoveSZ10" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="10 Sea Zone:battleship" count="1"/>
+      <option name="removeUnits" value="10 Sea Zone:carrier" count="1"/>
+      <option name="removeUnits" value="10 Sea Zone:fighter" count="1"/>
+      <option name="removeUnits" value="10 Sea Zone:tactical_bomber" count="1"/>
+      <option name="placement" value="10 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="10 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="10 Sea Zone:cruiser" count="1"/>
+      <option name="placement" value="10 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 26 Sea Zone -->
+    <attachment name="triggerAttachment_9641RemoveSZ26" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="26 Sea Zone:destroyer" count="1"/>
+      <option name="removeUnits" value="26 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="26 Sea Zone:battleship" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 28 Sea Zone -->
+    <attachment name="triggerAttachment_9641RemoveSZ28" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="28 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="28 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="28 Sea Zone:carrier" count="2"/>
+      <option name="placement" value="28 Sea Zone:fighter" count="2"/>
+      <option name="placement" value="28 Sea Zone:tactical_bomber" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Szechwan -->
+    <attachment name="triggerAttachment_9641RemoveSzechwan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Szechwan:artillery" count="1"/>
+      <option name="placement" value="Szechwan:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Hunan -->
+    <attachment name="triggerAttachment_9641RemoveHunan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Hunan:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Kweichow -->
+    <attachment name="triggerAttachment_9641RemoveKweichow" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Kweichow:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Hopei -->
+    <attachment name="triggerAttachment_9641RemoveHopei" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Hopei:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Shensi -->
+    <attachment name="triggerAttachment_9641RemoveShensi" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Shensi:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Kansu -->
+    <attachment name="triggerAttachment_9641RemoveKansu" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Kansu:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Sikang -->
+    <attachment name="triggerAttachment_9641RemoveSikang" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Sikang:infantry" count="4"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Tsinghai -->
+    <attachment name="triggerAttachment_9641RemoveTsinghai" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Tsinghai:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ United Kingdom -->
+    <attachment name="triggerAttachment_9641RemoveUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="United Kingdom:fighter" count="1"/>
+      <option name="removeUnits" value="United Kingdom:mech_infantry" count="1"/>
+      <option name="removeUnits" value="United Kingdom:bomber" count="1"/>
+      <option name="placement" value="United Kingdom:infantry" count="2"/>
+      <option name="placement" value="United Kingdom:artillery" count="1"/>
+      <option name="placement" value="United Kingdom:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_9641RemoveUKFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="United Kingdom:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Scotland -->
+    <attachment name="triggerAttachment_9641RemoveScotland" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Scotland:infantry" count="1"/>
+      <option name="placement" value="Scotland:mech_infantry" count="1"/>
+      <option name="placement" value="Scotland:fighter" count="1"/>
+      <option name="placement" value="Scotland:bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Iceland -->
+    <attachment name="triggerAttachment_9641RemoveIceland" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Iceland:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Gibraltar -->
+    <attachment name="triggerAttachment_9641RemoveGibraltar" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Gibraltar:infantry" count="1"/>
+      <option name="placement" value="Gibraltar:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Malta -->
+    <attachment name="triggerAttachment_9641RemoveMalta" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Malta:airfield" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Crete -->
+    <attachment name="triggerAttachment_Crete41" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Crete:Neutral_Allies:British:true"/>
+      <option name="placement" value="Crete:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Alexandria -->
+    <attachment name="triggerAttachment_Alexandria41" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Alexandria:armour" count="1"/>
+      <option name="removeUnits" value="Alexandria:infantry" count="1"/>
+      <option name="removeUnits" value="Alexandria:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Egypt -->
+    <attachment name="triggerAttachment_Egypt41" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Egypt:artillery" count="1"/>
+      <option name="placement" value="Egypt:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Egypt41ANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Egypt:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Trans-Jordan -->
+    <attachment name="triggerAttachment_TJ41" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Trans-Jordan:infantry" count="1"/>
+      <option name="placement" value="Trans-Jordan:artillery" count="1"/>
+      <option name="placement" value="Trans-Jordan:armour" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_TJ41F" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Trans-Jordan:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Kenya -->
+    <attachment name="triggerAttachment_Kenya" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Kenya:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ French Equatorial Africa -->
+    <attachment name="triggerAttachment_FEQ" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="French Equatorial Africa:French:British:false"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_FEQF" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="French Equatorial Africa:infantry" count="1"/>
+      <option name="placement" value="French Equatorial Africa:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Union of South Africa -->
+    <attachment name="triggerAttachment_UofSAF41" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Union of South Africa:infantry" count="1"/>
+      <option name="placement" value="Union of South Africa:artillery" count="1"/>
+      <option name="placement" value="Union of South Africa:mech_infantry" count="1"/>
+      <option name="placement" value="Union of South Africa:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ South West Africa -->
+    <attachment name="triggerAttachment_SWAF" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="South West Africa:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Quebec -->
+    <attachment name="triggerAttachment_Quebec" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Quebec:fighter" count="1"/>
+      <option name="placement" value="Quebec:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Ontario -->
+    <attachment name="triggerAttachment_Ontario" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Ontario:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Alberta Saskatchewan Manitoba -->
+    <attachment name="triggerAttachment_ASM" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Alberta Saskatchewan Manitoba:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ British Columbia -->
+    <attachment name="triggerAttachment_BC" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="British Columbia:infantry" count="1"/>
+      <option name="placement" value="British Columbia:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 117 Sea Zone -->
+    <attachment name="triggerAttachment_SZ117" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="117 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 109 Sea Zone -->
+    <attachment name="triggerAttachment_SZ109" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="109 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 119 Sea Zone -->
+    <attachment name="triggerAttachment_SZ119" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="119 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="119 Sea Zone:cruiser" count="2"/>
+      <option name="placement" value="119 Sea Zone:battleship" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 111 Sea Zone -->
+    <attachment name="triggerAttachment_SZ111" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="111 Sea Zone:battleship" count="1"/>
+      <option name="removeUnits" value="111 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 110 Sea Zone -->
+    <attachment name="triggerAttachment_SZ110" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="110 Sea Zone:battleship" count="1"/>
+      <option name="removeUnits" value="110 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_SZ110French" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="110 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 92 Sea Zone -->
+    <attachment name="triggerAttachment_SZ92" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="92 Sea Zone:carrier" count="1"/>
+      <option name="placement" value="92 Sea Zone:tactical_bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 99 Sea Zone -->
+    <attachment name="triggerAttachment_SZ99" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="99 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="99 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 98 Sea Zone -->
+    <attachment name="triggerAttachment_SZ98" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="98 Sea Zone:destroyer" count="1"/>
+      <option name="removeUnits" value="98 Sea Zone:cruiser" count="1"/>
+      <option name="removeUnits" value="98 Sea Zone:carrier" count="1"/>
+      <option name="removeUnits" value="98 Sea Zone:tactical_bomber" count="1"/>
+      <option name="removeUnits" value="98 Sea Zone:transport" count="1"/>
+      <option name="placement" value="98 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="98 Sea Zone:battleship" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_SZ98F" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="98 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_SZ98ANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="98 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 82 Sea Zone -->
+    <attachment name="triggerAttachment_SZ82" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="82 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_SZ82" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="82 Sea Zone:cruiser" count="1"/>
+      <option name="placement" value="82 Sea Zone:transport" count="1"/>
+      <option name="placement" value="82 Sea Zone:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 71 Sea Zone -->
+    <attachment name="triggerAttachment_SZ71" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="71 Sea Zone:transport" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 91 Sea Zone -->
+    <attachment name="triggerAttachment_SZ91" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="91 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ West India -->
+    <attachment name="triggerAttachment_Windia" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="West India:mech_infantry" count="1"/>
+      <option name="placement" value="West India:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Burma -->
+    <attachment name="triggerAttachment_Burma" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Burma:fighter" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Sumatra -->
+    <attachment name="triggerAttachment_Sumatra" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Sumatra:Dutch:British:false"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Celebes -->
+    <attachment name="triggerAttachment_Celebes" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Celebes:Dutch:British:false"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 39 Sea Zone -->
+    <attachment name="triggerAttachment_39SZ" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="39 Sea Zone:cruiser" count="1"/>
+      <option name="placement" value="39 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="39 Sea Zone:carrier" count="1"/>
+      <option name="placement" value="39 Sea Zone:fighter" count="1"/>
+      <option name="placement" value="39 Sea Zone:tactical_bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ New South Wales -->
+    <attachment name="triggerAttachment_NSW" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="New South Wales:aaGun" count="1"/>
+      <option name="removeUnits" value="New South Wales:infantry" count="1"/>
+      <option name="placement" value="New South Wales:mech_infantry" count="1"/>
+      <option name="placement" value="New South Wales:armour" count="1"/>
+      <option name="placement" value="New South Wales:fighter" count="1"/>
+      <option name="placement" value="New South Wales:tactical_bomber" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Queensland -->
+    <attachment name="triggerAttachment_Queensland" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Queensland:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Northern Territory -->
+    <attachment name="triggerAttachment_NTTy" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Northern Territory:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Western Australia -->
+    <attachment name="triggerAttachment_WAustralia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Western Australia:infantry" count="2"/>
+      <option name="placement" value="Western Australia:aaGun" count="1"/>
+      <option name="placement" value="Western Australia:airfield" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ New Zealand -->
+    <attachment name="triggerAttachment_NZL" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="New Zealand:fighter" count="1"/>
+      <option name="placement" value="New Zealand:mech_infantry" count="1"/>
+      <option name="placement" value="New Zealand:artillery" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ New Hebrides -->
+    <attachment name="triggerAttachment_NHB" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="New Hebrides:French:ANZAC:false"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ New Guinea -->
+    <attachment name="triggerAttachment_NGuinea" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="New Guinea:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Dutch New Guinea -->
+    <attachment name="triggerAttachment_DNG" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Dutch New Guinea:Dutch:ANZAC:false"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Java -->
+    <attachment name="triggerAttachment_Java" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="changeOwnership" value="Java:Dutch:ANZAC:false"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Shan State -->
+    <attachment name="triggerAttachment_Shan" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Shan State:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ India -->
+    <attachment name="triggerAttachment_India" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="India:infantry" count="2"/>
+      <option name="placement" value="India:aaGun" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Alexandria -->
+    <attachment name="triggerAttachment_Alexandria" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Alexandria:mech_infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Tobruk -->
+    <attachment name="triggerAttachment_Tobruk" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Tobruk:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 54 Sea Zone -->
+    <attachment name="triggerAttachment_54SZ" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="54 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="54 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 62 Sea Zone -->
+    <attachment name="triggerAttachment_62SZ" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="62 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 39 Sea Zone -->
+    <attachment name="triggerAttachment_39SZ" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="39 Sea Zone:cruiser" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ Egypt -->
+    <attachment name="triggerAttachment_Egypt" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="Egypt:infantry" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 119 Sea Zone -->
+    <attachment name="triggerAttachment_119SZ" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="placement" value="119 Sea Zone:submarine" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- 41 OZ 72 Sea Zone -->
+    <attachment name="triggerAttachment_72SZ" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="72 Sea Zone:destroyer" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <!-- 41 Oztea End -->
+    
     <!-- Russians Conditions -->
     <attachment name="conditionAttachmentTurn3OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="3-+"/>
@@ -4500,6 +6217,12 @@
     <attachment name="conditionAttachmentTurn3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="3"/>
     </attachment>
+    <attachment name="conditionAttachmentTurn1OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="1-+"/>
+    </attachment>
+    <attachment name="conditionAttachmentTurn2OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="2-+"/>
+    </attachment>
     <attachment name="conditionAttachmentTurn4OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="4-+"/>
     </attachment>
@@ -4535,6 +6258,11 @@
       <option name="conditions" value="conditionAttachmentAmericansNotYetAtWarWithAll"/>
       <option name="rounds" value="3"/>
     </attachment>
+    <attachment name="conditionAttachmentAmericansNotYetAtWarWithAllAndTurn1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericansNotYetAtWarWithAll"/>
+      <option name="rounds" value="1"/>
+    </attachment>
+    
     <attachment name="conditionAttachment_Americans_May_Declare_War_On_Axis_Early" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn4OrHigher:conditionAttachment_Americans_At_War_With_At_Least_One_Axis:conditionAttachment_British_Provoked_War_With_Japan:conditionAttachment_Axis_Capture_London_Switch:conditionAttachment_Axis_Land_In_North_America_Switch"/>
       <option name="conditionType" value="OR"/>
@@ -4543,6 +6271,16 @@
       <option name="conditions" value="conditionAttachmentAmericansNotYetAtWarWithAll:conditionAttachment_Americans_May_Declare_War_On_Axis_Early"/>
       <option name="conditionType" value="AND"/>
     </attachment>
+    
+    <attachment name="conditionAttachment_Americans_May_Declare_War_On_Axis_Early41oz" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn2OrHigher:conditionAttachment_Americans_At_War_With_At_Least_One_Axis:conditionAttachment_British_Provoked_War_With_Japan:conditionAttachment_Axis_Capture_London_Switch:conditionAttachment_Axis_Land_In_North_America_Switch"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_May_Declare_War_On_Axis41oz" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentAmericansNotYetAtWarWithAll:conditionAttachment_Americans_May_Declare_War_On_Axis_Early"/>
+      <option name="conditionType" value="AND"/>
+    </attachment>
+    
     <attachment name="conditionAttachment_Russians_At_War_In_Europe" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
@@ -4550,9 +6288,25 @@
       <option name="conditions" value="conditionAttachment_Axis_Capture_London_Switch:conditionAttachmentTurn4OrHigher:conditionAttachment_Russians_At_War_In_Europe"/>
       <option name="conditionType" value="OR"/>
     </attachment>
+    <attachment name="conditionAttachment_Russians_May_Declare_War_On_European_Axis41oz" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Capture_London_Switch:conditionAttachmentTurn2OrHigher:conditionAttachment_Russians_At_War_In_Europe"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
     <attachment name="conditionAttachment_Americans_And_Japanese_At_War" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="atWarPlayers" value="Americans" count="1"/>
     </attachment>
+    
+    <attachment name="conditionAttachment_GermansOwnMoscow" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Russia" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Russians_And_Japanese_At_War" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="atWarPlayers" value="Japanese" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Russians_And_Japanese_At_War41oz" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_GermansOwnMoscow:conditionAttachment_Russians_And_Japanese_At_War"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
+    
     <attachment name="conditionAttachmentGermansNotYetAtWarWithAmericans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="atWarPlayers" value="Germans" count="0"/>
     </attachment>
@@ -4906,6 +6660,73 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+
+    <!-- 41 OZ Triggers -->
+    <attachment name="triggerAttachment_41oz_Aids_Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="18"/>
+      <option name="players" value="Germans"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_41oz_Aids_Japan" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="5"/>
+      <option name="players" value="Japanese"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_41oz_Aids_China" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="-3"/>
+      <option name="players" value="Chinese"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_41oz_Aids_UK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="2"/>
+      <option name="players" value="British"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_41oz_Aids_UKP" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="7"/>
+      <option name="players" value="UK_Pacific"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_41oz_Aids_Italy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="4"/>
+      <option name="players" value="Italians"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_41oz_Aids_ANZAC" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="4"/>
+      <option name="players" value="ANZAC"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_41oz_Aids_French" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentTurn1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="-19"/>
+      <option name="players" value="French"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    
     
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -15000,6 +16821,17 @@
       <option name="playerProperty" value="movementRestrictionType" count="disallowed"/>
       <option name="when" value="before:japaneseCombatMove"/>
     </attachment>
+
+    <attachment name="triggerAttachment_Russians_Unrestricted_Movement41oz" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+        <option name="conditions" value="41oz:conditionAttachment_Russians_And_Japanese_At_War41oz"/>
+	<option name="uses" value="1"/>
+        <option name="players" value="Russians"/>
+        <option name="playerAttachmentName" value="RulesAttachment" count="rulesAttachment"/>
+        <option name="playerProperty" value="movementRestrictionTerritories" count=""/>
+        <option name="playerProperty" value="movementRestrictionType" count="disallowed"/>
+        <option name="when" value="before:russiansCombatMove"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_Americans_War_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAmericansNotYetAtWarWithAllAndTurn3"/>
       <option name="relationshipChange" value="Japanese:Americans:anyNeutral:War"/>
@@ -15025,6 +16857,32 @@
       <option name="when" value="after:americansPlace"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_Americans_War_Japanese41oz" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentAmericansNotYetAtWarWithAllAndTurn1"/>
+      <option name="relationshipChange" value="Japanese:Americans:anyNeutral:War"/>
+      <option name="relationshipChange" value="Chinese:Americans:anyNeutral:Allied"/>
+      <option name="relationshipChange" value="British:Americans:anyNeutral:Allied"/>
+      <option name="relationshipChange" value="UK_Pacific:Americans:anyNeutral:Allied"/>
+      <option name="relationshipChange" value="ANZAC:Americans:anyNeutral:Allied"/>
+      <option name="relationshipChange" value="Americans:French:anyNeutral:Allied"/>
+      <option name="relationshipChange" value="Americans:Dutch:anyNeutral:Friendly"/>
+      <option name="relationshipChange" value="Germans:Americans:anyNeutral:War"/>
+      <option name="relationshipChange" value="Italians:Americans:anyNeutral:War"/>
+      <option name="relationshipChange" value="Americans:Neutral_Allies:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Neutral_Axis:anyNeutral:Unfriendly_Neutral"/>
+      <!--<option name="relationshipChange" value="Japanese:British:anyNeutral:War"/>
+					<option name="relationshipChange" value="Japanese:UK_Pacific:anyNeutral:War"/>
+					<option name="relationshipChange" value="Japanese:ANZAC:anyNeutral:War"/>
+					<option name="relationshipChange" value="Japanese:Dutch:anyNeutral:War"/>
+					<option name="relationshipChange" value="Chinese:British:anyNeutral:Allied"/>
+					<option name="relationshipChange" value="Chinese:UK_Pacific:anyNeutral:Allied"/>
+					<option name="relationshipChange" value="Chinese:ANZAC:anyNeutral:Allied"/>
+					<option name="relationshipChange" value="Chinese:Dutch:anyNeutral:Friendly"/>-->
+      <option name="notification" value="Americans_War_Axis"/>
+      <option name="when" value="after:americansPlace"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_Germans_Conquer_London" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Capture_London"/>
       <option name="when" value="after:germansBattle"/>
@@ -15266,6 +17124,11 @@
       <option name="movementRestrictionTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone"/>
       <option name="movementRestrictionType" value="disallowed"/>
     </attachment>
+
+    <attachment name="rulesAttachment" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="movementRestrictionTerritories" value="6 Sea Zone:2 Sea Zone:7 Sea Zone:8 Sea Zone"/>
+      <option name="movementRestrictionType" value="disallowed"/>
+    </attachment>
     <!-- Political Action Attachments -->
     <attachment name="politicalActionAttachment_Axis_To_War_With_TrueNeutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals"/>
@@ -15480,6 +17343,14 @@
       <option name="relationshipChange" value="Chinese:French:Allied"/>
       <option name="text" value="Japanese_War_French"/>
     </attachment>
+    <attachment name="triggerAttachment_French_At_War_With_Japan41oz" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="41oz"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+      <option name="relationshipChange" value="French:Japanese:anyNeutral:War"/>
+      <option name="relationshipChange" value="Chinese:French:anyNeutral:Allied"/>
+    </attachment>
+    
     <attachment name="politicalActionAttachment_French_To_War_With_Japanese" attachTo="French" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentJapaneseNotYetAtWarWithFrench"/>
       <option name="relationshipChange" value="Japanese:French:War"/>
@@ -15518,6 +17389,17 @@
       <option name="relationshipChange" value="Russians:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Russians:Neutral_Axis:Unfriendly_Neutral"/>
       <option name="text" value="Russians_War_Germans"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Russians_To_War_With_Germans41oz" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachment_Germans_Not_At_War_With_Russians:conditionAttachment_Russians_May_Declare_War_On_European_Axis41oz"/>
+      <option name="relationshipChange" value="Germans:Russians:War"/>
+      <option name="relationshipChange" value="Russians:British:Allied"/>
+      <option name="relationshipChange" value="Russians:UK_Pacific:Allied"/>
+      <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
+      <option name="relationshipChange" value="Russians:French:Allied"/>
+      <option name="relationshipChange" value="Russians:Neutral_Allies:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Russians:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="text" value="Russians_War_Germans41oz"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_Italians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italians_Not_At_War_With_Russians:conditionAttachment_Russians_May_Declare_War_On_European_Axis"/>
@@ -15630,6 +17512,7 @@
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
       <option name="text" value="Axis_War_Americans"/>
     </attachment>
+    
     <attachment name="politicalActionAttachment_Americans_To_War_With_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Not_Yet_At_War_With_Americans:conditionAttachment_Americans_May_Declare_War_On_Axis"/>
       <option name="relationshipChange" value="Japanese:Americans:War"/>
@@ -15643,6 +17526,20 @@
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
       <option name="text" value="Americans_War_Japanese"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Americans_To_War_With_Japanese41oz" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachment_Japanese_Not_Yet_At_War_With_Americans:conditionAttachment_Americans_May_Declare_War_On_Axis41oz"/>
+      <option name="relationshipChange" value="Japanese:Americans:War"/>
+      <option name="relationshipChange" value="Chinese:Americans:Allied"/>
+      <option name="relationshipChange" value="British:Americans:Allied"/>
+      <option name="relationshipChange" value="UK_Pacific:Americans:Allied"/>
+      <option name="relationshipChange" value="ANZAC:Americans:Allied"/>
+      <option name="relationshipChange" value="Americans:French:Allied"/>
+      <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
+      <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="text" value="Americans_War_Japanese"/>
+    </attachment>
+    
     <attachment name="politicalActionAttachment_Americans_To_War_With_Germans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentGermansNotYetAtWarWithAmericans:conditionAttachment_Americans_May_Declare_War_On_Axis"/>
       <option name="relationshipChange" value="Germans:Americans:War"/>
@@ -15656,8 +17553,35 @@
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
       <option name="text" value="Americans_War_Germans"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Americans_To_War_With_Germans41oz" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentGermansNotYetAtWarWithAmericans:conditionAttachment_Americans_May_Declare_War_On_Axis41oz"/>
+      <option name="relationshipChange" value="Germans:Americans:War"/>
+      <option name="relationshipChange" value="Chinese:Americans:Allied"/>
+      <option name="relationshipChange" value="British:Americans:Allied"/>
+      <option name="relationshipChange" value="UK_Pacific:Americans:Allied"/>
+      <option name="relationshipChange" value="ANZAC:Americans:Allied"/>
+      <option name="relationshipChange" value="Americans:French:Allied"/>
+      <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
+      <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="text" value="Americans_War_Germans"/>
+    </attachment>
+    
     <attachment name="politicalActionAttachment_Americans_To_War_With_Italians" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentItaliansNotYetAtWarWithAmericans:conditionAttachment_Americans_May_Declare_War_On_Axis"/>
+      <option name="relationshipChange" value="Italians:Americans:War"/>
+      <option name="relationshipChange" value="Chinese:Americans:Allied"/>
+      <option name="relationshipChange" value="British:Americans:Allied"/>
+      <option name="relationshipChange" value="UK_Pacific:Americans:Allied"/>
+      <option name="relationshipChange" value="ANZAC:Americans:Allied"/>
+      <option name="relationshipChange" value="Americans:French:Allied"/>
+      <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
+      <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="text" value="Americans_War_Italians"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Americans_To_War_With_Italians41oz" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="41oz:conditionAttachmentItaliansNotYetAtWarWithAmericans:conditionAttachment_Americans_May_Declare_War_On_Axis41oz"/>
       <option name="relationshipChange" value="Italians:Americans:War"/>
       <option name="relationshipChange" value="Chinese:Americans:Allied"/>
       <option name="relationshipChange" value="British:Americans:Allied"/>
@@ -15761,6 +17685,7 @@
       <territoryOwner territory="Anhwe" owner="Chinese"/>
       <!-- himalayas contain chinese capitol, so must be owned by china or they do not collect ipcs -->
       <territoryOwner territory="Himalayas" owner="Chinese"/>
+      <territoryOwner territory="Bermuda" owner="British"/>
       <territoryOwner territory="Sahara Desert" owner="Neutral_True"/>
       <territoryOwner territory="Gilbert Islands" owner="UK_Pacific"/>
       <territoryOwner territory="Fiji" owner="UK_Pacific"/>
@@ -16845,6 +18770,9 @@
     <property name="Capital Cash Once" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Oztea 1941" value="true" editable="true">
+      <boolean/>
+    </property>
     <!-- Neutrals related -->
     <property name="neutralCharge" value="0" editable="false">
       <number min="0" max="9999999"/>
@@ -16884,11 +18812,31 @@ You will need to Turn On "BM Rules" "BM Vichy Rule" "Bombers Cost 14" and "BM Ch
 <br>
 Rules are Below.<br>
 <br>
-Change Log:<br>
+<b>Oztea 1941</b><br>
+<br>
+<br><em>Great Britain stands alone, struggling to hold together its Empire, beset by the European Axis. Victories for the Allies have been far and few between. France has surrendered to Germany and Italy, the Greek campaign has ended in failure, the Royal Air Force has suffered heavy losses as British cities are bombed daily, and the gains made in North Africa are in jeporady as German reinforcements arrive. Yet worse still, the German Battleship Bismark and a myraid of U-Boats are marauding the North Atlantic and threatening to starve the United Kingdom of supplies and into submission. But a whole new war is on the horizon as Operation Barbarossa is set to begin in earnest, German forces are poised to cut deep into the Soviet Union. And in the east, the Japanese Empire is poised to launch a series of surprise attacks on the colonies of the West and the forces of the United States, plunging the world into a truly global war. The year is 1941, battles have been fought, but the war has just begun.</em><br>
+<br>
+
+<b>Note</b><br>
+This is Ozteas 1941 set up for the Global 1940 game. Politically the game begins as if it was the the third turn. Germany is at war with France, UK, and ANZAC. Italy is at war with France, UK, and ANZAC. Japan is at war with China and France.<br>
+<br>
+
+<b>Special Rules:</b><br>
+Soviet naval units in the Pacific Theatre must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan.<br>
+The Japanese Kamikaze special rule is deactivated when using the 1941 set up (It has been left active. It can be turned off in Game Options.).<br>
+<br>
+Additional information may be found here:www.axisandallies.org/forums/index.php?topic=30919.0<br>
+<br>
+Change Log UHD:<br>
+<br>
+2.8<br>
+1-4-23<br>
+Add Oztea's 1941 Mod. Activate in "Map/Game Options".
+<br>
 <br>
 2.71<br>
-10-18-23<br>
-Change Bessarabia Placement to Avoid Ukraine.
+12-26-23<br>
+Change Bessarabia Placement to Avoid Ukraine. Make Bermuda it's own Territory. A Few Other Placement Adjustments.
 <br>
 <br>
 2.7<br>
