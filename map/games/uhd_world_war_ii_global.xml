@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.9"/>
+  <info name="UHD World War II Global" version="2.91"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -18154,7 +18154,7 @@
       <unitPlacement unitType="infantry" territory="Greater Southern Germany" quantity="6" owner="Germans"/>
       <unitPlacement unitType="artillery" territory="Greater Southern Germany" quantity="2" owner="Germans"/>
       <unitPlacement unitType="armour" territory="Greater Southern Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Germany" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="infantry" territory="Germany" quantity="11" owner="Germans"/>
       <unitPlacement unitType="artillery" territory="Germany" quantity="3" owner="Germans"/>
       <unitPlacement unitType="tactical_bomber" territory="Germany" quantity="1" owner="Germans"/>
       <unitPlacement unitType="bomber" territory="Germany" quantity="2" owner="Germans"/>
@@ -18831,9 +18831,15 @@ This is Ozteas 1941 set up for the Global 1940 game. Politically the game begins
 Soviet naval units in the Pacific Theatre must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan.<br>
 The Japanese Kamikaze special rule is deactivated when using the 1941 set up (It has been left active. It can be turned off in Game Options.).<br>
 <br>
-Additional information may be found here:www.axisandallies.org/forums/index.php?topic=30919.0<br>
+Additional information may be found here<br>
+www.axisandallies.org/forums/index.php?topic=30919.0<br>
 <br>
 Change Log UHD:<br>
+<br>
+2.91<br>
+1-31-24<br>
+Correct Starting German Infantry Total in Germany.
+<br>
 <br>
 2.9<br>
 1-19-24<br>
