@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.91"/>
+  <info name="UHD World War II Global" version="2.92"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
   <map>
     <!-- Full europe list:
-				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Eastern Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:Sahara Desert:Bermuda
+				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Eastern Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:Sahara Desert:Bermuda:Falklands
 				-->
     <!-- Border territories:
 				Evenkiyskiy:Urals:Novosibirsk:Himalayas:Kazakhstan:Timguska:India:Sikang:Tsinghai:Kansu
@@ -148,6 +148,7 @@
     <territory name="7 Sea Zone" water="true"/>
     <territory name="Himalayas"/>
     <territory name="Bermuda"/>
+    <territory name="Falklands"/>
     <territory name="8 Sea Zone" water="true"/>
     <territory name="9 Sea Zone" water="true"/>
     <territory name="3 Sea Zone" water="true"/>
@@ -3171,6 +3172,10 @@
       <option name="production" value="0"/>
       <option name="isImpassable" value="false"/>
     </attachment>
+    <attachment name="territoryAttachment" attachTo="Falklands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+      <option name="isImpassable" value="false"/>
+    </attachment>
     <attachment name="territoryAttachment" attachTo="Sahara Desert" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
       <option name="isImpassable" value="true"/>
@@ -4524,6 +4529,7 @@
     <!-- 41 OZ Setup Germany -->
     <attachment name="triggerAttachment_Germany41Remove" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="41oz"/>
+      <option name="removeUnits" value="Germany:infantry" count="5"/>
       <option name="removeUnits" value="Germany:bomber" count="1"/>
       <option name="removeUnits" value="Germany:artillery" count="2"/>
       <option name="when" value="before:germansPurchase"/>
@@ -4531,7 +4537,6 @@
     </attachment>
     <attachment name="triggerAttachment_Germany41" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="41oz"/>
-      <option name="placement" value="Germany:infantry" count="5"/>
       <option name="placement" value="Germany:aaGun" count="1"/>
       <option name="placement" value="Germany:tactical_bomber" count="1"/>
       <option name="placement" value="Germany:fighter" count="2"/>
@@ -17692,6 +17697,7 @@
       <!-- himalayas contain chinese capitol, so must be owned by china or they do not collect ipcs -->
       <territoryOwner territory="Himalayas" owner="Chinese"/>
       <territoryOwner territory="Bermuda" owner="British"/>
+      <territoryOwner territory="Falklands" owner="British"/>
       <territoryOwner territory="Sahara Desert" owner="Neutral_True"/>
       <territoryOwner territory="Gilbert Islands" owner="UK_Pacific"/>
       <territoryOwner territory="Fiji" owner="UK_Pacific"/>
@@ -18809,6 +18815,15 @@ Open Folder<br>
 Open "v3 Units" and replace the "units" folder with it.
 <br>
 <br>
+<b>To Change Map Colors</b><br>
+<br>
+Land Territories are changed in map.properties explained here<br>
+<br>https://www.axisandallies.org/forums/topic/39809/new-triplea-map-uhd-world-war-ii-global/58?_=1709335922225
+<br>
+<br>
+<b>Sea Zones</b> are explained here<br>
+<br>https://www.axisandallies.org/forums/topic/39809/new-triplea-map-uhd-world-war-ii-global/62?_=1709335922225<br>
+<br>
 You can turn on "Ownership Flags" in Map Options.
 <br>
 <br>
@@ -18828,12 +18843,20 @@ This is Ozteas 1941 set up for the Global 1940 game. Politically the game begins
 <br>
 
 <b>Special Rules:</b><br>
-Soviet naval units in the Pacific Theatre must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan.<br>
+Soviet Naval units in the Pacific Theatre must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan.<br>
 The Japanese Kamikaze special rule is deactivated when using the 1941 set up (It has been left active. It can be turned off in Game Options.).<br>
 <br>
-Additional information may be found here:www.axisandallies.org/forums/index.php?topic=30919.0<br>
+Additional information may be found here<br>
+www.axisandallies.org/forums/index.php?topic=30919.0<br>
 <br>
 Change Log UHD:<br>
+<br>
+2.92<br>
+3-2-24<br>
+Correct Starting German Infantry Total in Germany for Oztea 1941.
+<br>
+Some Land Border Adjustments and Place Changes.<br>
+Make Falklands British.<br>
 <br>
 2.91<br>
 1-31-24<br>

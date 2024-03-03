@@ -3,13 +3,19 @@
 <br>
 <b>Credits:</b> Bung, Veqryn<br><br>
 <b>UHD World War II Global</b><br><br>
-This is the <b>Black Elk</b> Mega Map for the Above Game. All Rules are the Same.<br><br>
+This is the <b>Black Elk Mega Map</b> for the Above Game. All Rules are the Same.<br><br>
 This Map Uses the <b>Frostion</b> Units as Default as well as some <b>Black Elk</b> Units.<br> If you would like to change to Version 3 Units, you need to open your triplea folder.<br>
 Go to downloadedMaps<br>
 Go to Uhd World War II Global <br>
 Open Folder<br>
 Open "v3 Units" and replace the "units" folder with it.
 <br>
+<br>
+<b>To Change Map Colors</b><br><br>
+Land Territories are changed in map.properties explained here<br><br> https://www.axisandallies.org/forums/topic/39809/new-triplea-map-uhd-world-war-ii-global/58?_=1709335922225
+<br>
+<br>
+<b>Sea Zones</b> are explained here<br><br> https://www.axisandallies.org/forums/topic/39809/new-triplea-map-uhd-world-war-ii-global/62?_=1709335922225<br>
 <br>
 You can turn on "Ownership Flags" in Map Options.
 <br>
@@ -30,12 +36,19 @@ This is Ozteas 1941 set up for the Global 1940 game. Politically the game begins
 <br>
 
 <b>Special Rules:</b><br>
-Soviet naval units in the Pacific Theatre must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan.<br>
+Soviet Naval units in the Pacific Theatre must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan.<br>
 The Japanese Kamikaze special rule is deactivated when using the 1941 set up (It has been left active. It can be turned off in Game Options.).<br>
 <br>
-Additional information may be found here:www.axisandallies.org/forums/index.php?topic=30919.0<br>
+Additional information may be found here<br>
+www.axisandallies.org/forums/index.php?topic=30919.0<br>
 <br>
 Change Log UHD:<br>
+<br>
+2.92<br>
+3-1-24<br>
+Correct Starting German Infantry Total in Germany for Oztea 1941.<br>
+Some Land Border Adjustments and Place Changes.<br>
+Make Falklands British.<br>
 <br>
 2.91<br>
 1-31-24<br>
