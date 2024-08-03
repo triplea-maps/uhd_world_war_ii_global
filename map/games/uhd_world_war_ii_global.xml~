@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="2.93"/>
+  <info name="UHD World War II Global" version="3.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -17696,7 +17696,7 @@
       <territoryOwner territory="Anhwe" owner="Chinese"/>
       <!-- himalayas contain chinese capitol, so must be owned by china or they do not collect ipcs -->
       <territoryOwner territory="Himalayas" owner="Chinese"/>
-      <territoryOwner territory="Bermuda" owner="British"/>
+      <territoryOwner territory="Bermuda" owner="Americans"/>
       <territoryOwner territory="Falklands" owner="British"/>
       <territoryOwner territory="Sahara Desert" owner="Neutral_True"/>
       <territoryOwner territory="Gilbert Islands" owner="UK_Pacific"/>
@@ -18807,17 +18807,12 @@
 <b>Credits:</b> Bung, Veqryn<br><br>
 
 <b>UHD World War II Global</b><br><br>
-This is the <b>Black Elk Mega Map</b> for the Above Game. All Rules are the Same.<br><br>
+This is a Larger Map for the Above Game. All Rules are the Same.<br><br>
 <b>You Can Check for Latest Update Here</b><br>
 <br>
 https://www.axisandallies.org/forums/topic/39809/new-triplea-map-uhd-world-war-ii-global?page=1.<br>
 <br>
-This Map Uses the <b>Frostion</b> Units as Default as well as some <b>Black Elk</b> Units.<br> If you would like to change to Version 3 Units, you need to open your triplea folder.<br>
-Go to downloadedMaps<br>
-Go to Uhd World War II Global <br>
-Open Folder<br>
-Open "v3 Units" and replace the "units" folder with it.
-<br>
+This Map Uses the <b>Frostion</b> Units as Default as well some others created by triplea users.<br> 
 <br>
 <b>To Change Map Colors</b><br>
 <br>
@@ -18827,9 +18822,6 @@ Land Territories are changed in map.properties explained here<br>
 <br>
 <b>Sea Zones</b> are explained here<br>
 <br>https://www.axisandallies.org/forums/topic/39809/new-triplea-map-uhd-world-war-ii-global/62?_=1709335922225<br>
-<br>
-You can turn on "Ownership Flags" in Map Options.
-<br>
 <br>
 The <b>Mod Squad:</b> Adam514 (co-originator and oracle), Regularkid aka DudewithOpinions (co-originator and king of noobs), Deathbringer1974 (chief executive troll), dust (good at math), dss85 (playtester and game breaker), Gencre (general haha), redrum (XML high priest), simon33 (bug chaser), Young Grasshopper (topper goodwill ambassador)<br><br><b>"BM 3 Mod"</b> has been added as a "Map Option".<br>
 <br>
@@ -18854,6 +18846,13 @@ Additional information may be found here<br>
 www.axisandallies.org/forums/index.php?topic=30919.0<br>
 <br>
 Change Log UHD:<br>
+<br>
+3.0<br>
+3-23-24<br>
+Revert Bermuda to US Control.<br>
+Remove v3 Units.<br>
+Shrink Download Size.
+<br>
 <br>
 2.93<br>
 3-3-24<br>
