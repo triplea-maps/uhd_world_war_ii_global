@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="3.0"/>
+  <info name="UHD World War II Global" version="3.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -18846,6 +18846,11 @@ Additional information may be found here<br>
 www.axisandallies.org/forums/index.php?topic=30919.0<br>
 <br>
 Change Log UHD:<br>
+<br>
+3.1<br>
+8-3-24<br>
+Fix Afghanistan/Sikang Connection.
+<br>
 <br>
 3.0<br>
 3-23-24<br>
