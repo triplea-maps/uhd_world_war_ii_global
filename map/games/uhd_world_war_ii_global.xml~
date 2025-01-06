@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="3.2"/>
+  <info name="UHD World War II Global" version="3.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -17786,7 +17786,7 @@
       <territoryOwner territory="Uruguay" owner="Neutral_True"/>
       <territoryOwner territory="Rio de Oro" owner="Neutral_True"/>
       <territoryOwner territory="Portuguese Guinea" owner="Neutral_True"/>
-      <territoryOwner territory="Sierra Leone" owner="British"/>
+      <territoryOwner territory="Sierra Leone" owner="Neutral_True"/>
       <territoryOwner territory="Liberia" owner="Neutral_True"/>
       <territoryOwner territory="Mozambique" owner="Neutral_True"/>
       <territoryOwner territory="Angola" owner="Neutral_True"/>
