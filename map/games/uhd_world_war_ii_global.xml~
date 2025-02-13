@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="3.3"/>
+  <info name="UHD World War II Global" version="3.5"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6035,7 +6035,7 @@
       <option name="unitPresence" value="battleship:carrier:submarine:destroyer:cruiser" count="0"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachmentTurn3OrHigher:conditionAttachment_Russians_1_Convoy_Clear"/>
       <option name="directOwnershipTerritories" value="Archangel" count="1"/>
       <option name="alliedExclusionTerritories" value="original"/>
       <option name="atWarPlayers" value="Germans:Italians" count="1"/>
@@ -6663,6 +6663,24 @@
       <option name="unitProperty" value="airAttack" count="-reset-"/>
       <option name="unitProperty" value="airAttack" count="2"/>
       <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BMRulesCanTrprtMarinesBB" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="BMRules"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="after:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BMRulesCanTrprtMarinesCA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="BMRules"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="after:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
 
