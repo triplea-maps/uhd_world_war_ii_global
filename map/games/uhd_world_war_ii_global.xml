@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="UHD World War II Global" version="3.5"/>
+  <info name="UHD World War II Global" version="3.53"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4164,6 +4164,25 @@
       <!-- we do not want dutch control of new guinea to count towards this goal -->
       <option name="players" value="British:UK_Pacific:Americans:ANZAC:Russians:French"/>
     </attachment>
+    <attachment name="objectiveAttachment_ANZAC_4_Control_Strategic_IslandsBM" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="BMRules:conditionAttachmentANZAC_At_War_With_Japanese"/>
+      <option name="objectiveValue" value="3"/>
+      <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
+      <!-- we do not want dutch control of new guinea to count towards this goal -->
+      <option name="players" value="British:UK_Pacific:Americans:ANZAC:Russians:French"/>
+    </attachment>
+    <attachment name="objectiveAttachment_ANZAC_5_Control_Strategic_IslandsBM" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="BMRules:conditionAttachmentANZAC_At_War_With_Japanese"/>
+      <option name="objectiveValue" value="3"/>
+      <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
+      <!-- we do not want dutch control of new guinea to count towards this goal -->
+      <option name="players" value="British:UK_Pacific:Americans:ANZAC:Russians:French"/>
+    </attachment>
+    <attachment name="objectiveAttachment_ANZAC_3_Pacific_Supply_Lines" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="BMRules:conditionAttachmentANZAC_At_War_With_Japanese"/>
+      <option name="objectiveValue" value="3"/>
+      <option name="alliedOwnershipTerritories" value="Samoa:Gilbert Islands:Fiji:Solomon Islands" count="4"/>
+    </attachment>
     <!-- Italians Objectives -->
     <attachment name="objectiveAttachment_Italians_1_Control_The_Mediterranean" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -7380,10 +7399,16 @@
     </attachment>
     <!-- ANZAC Triggers -->
     <attachment name="triggerAttachment_ANZAC_1_Control_Original_And_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachment_ANZAC_1_Original:conditionAttachment_ANZAC_1_Malaya"/>
+      <option name="trigger" value="BMRulesInvert:conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachment_ANZAC_1_Original:conditionAttachment_ANZAC_1_Malaya"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
+    <attachment name="triggerAttachment_ANZAC_3_Control_Original_And_MalayaBM" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="BMRules:conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachment_ANZAC_1_Original:conditionAttachment_ANZAC_1_Malaya"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="3"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_ANZAC_Flags_Activate" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Flag"/>
       <option name="placement" value="New South Wales:Flag" count="1"/>

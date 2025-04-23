@@ -75,7 +75,7 @@ UHD_World_War_II_Global.TABLEGROUP.07;UK_Pacific=objectiveAttachment_UK_Pacific_
 UHD_World_War_II_Global.TABLEGROUP.08;Italians=objectiveAttachment_Italians_1_Control_The_Mediterranean;objectiveAttachment_Italians_2_Roman_Empire;objectiveAttachment_Italians_3_North_Africa;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia;objectiveAttachment_Italians_BM_North_Africa_Control;objectiveAttachment_Italians_BM_Control_Convoy_Lanes
 UHD_World_War_II_Global.TABLEGROUP.09;ANZAC=triggerAttachment_ANZAC_1_Control_Original_And_Malaya;objectiveAttachment_ANZAC_2_Control_Strategic_Islands
 UHD_World_War_II_Global.TABLEGROUP.10;French=conditionAttachment_French_1_Liberation_Switch
-UHD_World_War_II_Global.TABLEGROUP.11;Victory_Conditions=triggerAttachmentAxisVictory1;triggerAttachmentAlliedVictory1
+UHD_World_War_II_Global.TABLEGROUP.11;Victory_Conditions=triggerAttachmentAxisVictory1;triggerAttachmentAxisVictoryBM;triggerAttachmentAlliedVictory1
 
 
 UHD_World_War_II_Global.Germans;objectiveAttachment_Germans_1_Trade_with_Russia=<b>5 PUs</b> if not yet at War with Russia.
@@ -148,6 +148,7 @@ UHD_World_War_II_Global.French;conditionAttachment_French_1_Liberation_Switch=<b
 
 
 UHD_World_War_II_Global.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 8 European Victory Cities OR 6 Pacific Victory Cities where at Least One is Rome/Berlin/Japan.
+UHD_World_War_II_Global.Germans;triggerAttachmentAxisVictoryBM=<b>Axis Victory BM:</b> 8 European Victory Cities OR 6 Pacific Victory Cities and Germany and Japan are Axis Controlled OR 9 European Victory Cities if Japan is Conquered OR 7 Pacific Victory Cities if Germany has been Conquered.
 UHD_World_War_II_Global.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> Berlin and Rome and Japan are under Allied Control and Allies Maintain Control of One of Their Own Capitals.
 
 
